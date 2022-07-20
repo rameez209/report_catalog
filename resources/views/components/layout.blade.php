@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="//unpkg.com/alpinejs" defer></script> 
+    <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,70 +19,78 @@
                         // laravel: "#ef3b2d",
                         laravel: "#1e98a6",
                         success: "#198754",
+                        department: "#008080",
                     },
                 },
             },
         };
     </script>
-    <title>LaraGigs | Find Laravel Jobs & Projects</title>
+    <title>SJGH | Report Catalog</title>
 </head>
 
 <body class="mb-48">
-    <nav class="flex justify-between items-center mb-4">
+    <nav class="sticky top-0 z-50 flex justify-between items-center mb-4 pl-4 pb-4 bg-white">
         <a href="/">
-            <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
+            {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
+            <h1 class="text-2xl font-bold uppercase text-laravel">
+                {{-- Lara<span class="text-black">Gigs</span> --}}
+                <span>SJGH Report Catalog</span>
+            </h1>
         </a>
         <ul class="flex space-x-6 mr-6 text-lg">
-            @auth 
-            {{--  Show if the user is logged in --}}
-            <li>
-                <span class="font-bold uppercase">
-                    Welcome {{auth()->user()->name}}
-                </span>
-            </li>
-            <li>
-                <a href="/reports/manage" class="hover:text-laravel">
-                    <i class="fa-solid fa-gear"></i>
-                    Manage Reports
-                </a>
-            </li>
-            {{-- logout --}}
-            <li>
-                <form class="inline" method="POST" action="/logout">
-                    @csrf
-                    <button type="submit">
-                        <i class="fa-solid fa-door-closed"></i> Logout
-                    </button>
-                </form>
-            </li>
-            @else 
-            {{-- Hide if no user logged in --}}
-            <li>
-                <a href="/register" class="hover:text-laravel">
-                    <i class="fa-solid fa-user-plus"></i>
-                    Register
-                </a>
-            </li>
-            <li>
-                <a href="/login" class="hover:text-laravel">
-                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                    Login
-                </a>
-            </li>
+            @auth
+                {{-- Show if the user is logged in --}}
+                <li>
+                    <span class="font-bold uppercase">
+                        Welcome {{ auth()->user()->name }}
+                    </span>
+                </li>
+                <li>
+                    <a href="/reports/manage" class="hover:text-laravel">
+                        <i class="fa-solid fa-gear"></i>
+                        Manage Reports
+                    </a>
+                </li>
+                {{-- logout --}}
+                <li>
+                    <form class="inline" method="POST" action="/logout">
+                        @csrf
+                        <button type="submit">
+                            <i class="fa-solid fa-door-closed"></i> Logout
+                        </button>
+                    </form>
+                </li>
+            @else
+                {{-- Hide if no user logged in --}}
+                <li>
+                    <a href="/register" class="hover:text-laravel">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Register
+                    </a>
+                </li>
+                <li>
+                    <a href="/login" class="hover:text-laravel">
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        Login
+                    </a>
+                </li>
             @endauth
         </ul>
     </nav>
-
     <main>
         {{-- VIEW OUTPUT --}}
         {{ $slot }}
+
     </main>
     <footer
         class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
-        <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
+
+
+        {{-- <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p> --}}
         <a href="/reports/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">
             Add a Report
         </a>
+
     </footer>
     <x-flash-success />
 </body>

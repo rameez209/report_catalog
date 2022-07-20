@@ -17,6 +17,9 @@
             <div class="text-lg mt-4">
                 <i class="fa-solid fa-location-dot"></i> {{ $report->frequency}}
             </div>
+            <div class="text-xs mt-6 text-laravel">
+                <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by}}
+            </div>
         </div>
     </div>
 </x-card>

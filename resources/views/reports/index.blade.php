@@ -11,5 +11,13 @@
             <p>No reports found!</p>
         @endunless
     </div>
-</x-layout>
+    <div>
+    </div>
+    {{-- @foreach ($reports as $rpt)
+        <div>{{ $rpt->Department }}</div>
+        <li class="flex items-center justify-center bg-laravel text-white rounded-xl py-1 px-3 mr-2 text-xs">
+            <a href="/?department={{ $rpt->Department }}">{{ $rpt->Department }}</a>
+        </li>
+    @endforeach --}}
 
+</x-layout>

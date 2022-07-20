@@ -6,11 +6,16 @@ use App\Models\Report;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
      // Show all reports
      public function index() {
+
+        $dprtmnt = DB::table('reports')->select('Department')->orderBy('Department', 'asc')->distinct()->get();
+        // dd($dprtmnt);
+        
          return view('reports.index', [
              'reports' => report::latest()->filter(request(['department', 'search']))->get()
             ]);
@@ -34,6 +39,8 @@ class ReportController extends Controller
     {
         $formFields = $request->validate([
             'report_name' => 'required',
+            // Key Terms 
+            // ex. diebetics 
             // 'Department' => ['required', Rule::unique('reports', 'Department')],
             'Department' => 'required',
             // 'requested_by' => 'required',

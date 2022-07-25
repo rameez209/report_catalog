@@ -2,34 +2,30 @@
     <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
+        
         <x-card class="p-10">
-            <div class="flex flex-col items-center justify-center text-center">
-                {{-- <img class="w-48 mr-6 mb-6" src="{{ asset('/images/no-image.png') }}" alt="" /> --}}
-                <img class="w-48 mr-6 mb-6" src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}" alt="" />
-                
-                <h3 class="text-2xl mb-2">{{ $report->report_name }}</h3>
-                <div class="text-xl font-bold mb-4">{{ $report->Department }}</div>
-                <x-report-department :departmentCsv="$report->Department" />
-                <div class="text-lg my-4">
-                    <i class="fa-solid fa-location-dot"></i> {{$report->frequency}}
+            <p class="text-3xl mb-2 text-lg-center items-center justify-center">{{ $report->report_name }}</p>
+            <div class="flex flex-col items-left justify-left ">
+
+                <div class="text-sm mt-6 mb-6 text-department">
+                    <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
                 </div>
+
+                
                 <div class="border border-gray-200 w-full mb-6"></div>
                 <div>
-                    <h3 class="text-3xl font-bold mb-4">
-                        Description
-                    </h3>
-                    <div class="text-lg space-y-6">
+                    <x-report-department :departmentCsv="$report->Department" />
+
+                    <div class="text-lg space-y-6 mt-6">
                         <p>
                             {{ $report->description }}
                         </p>
-
-
                         {{-- <a
-                                    href="mailto:test@test.com"
+                            href="mailto:test@test.com"
                                     class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"
                                     ><i class="fa-solid fa-envelope"></i>
                                     Contact Employer</a
-                                >
+                                    >
 
                                 <a
                                     href="https://test.com"
@@ -37,12 +33,19 @@
                                     class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
                                     ><i class="fa-solid fa-globe"></i> Visit
                                     Website</a
-                                > --}}
+                                    > --}}
                     </div>
+                        <x-report-Keyterm :KeytermsCsv="$report->key_terms" />
+                        <div class="text-lg my-4">
+                            <i class="fa-solid fa fa-clock"></i> {{ $report->frequency }}
+                        </div>
                 </div>
+                <img class="w-48 mr-6 mb-6"
+                    src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
+                    alt="" />
             </div>
         </x-card>
-        <x-card class="mt-4 p-2 flex space-x-6">
+        <x-card class="mt-4 p-2 flex space-x-6 justify-end">
             <a href="/reports/{{ $report->id }}/edit">
                 <i class="fa-solid fa-pencil"></i> Edit
             </a>
@@ -55,4 +58,3 @@
         </x-card>
     </div>
 </x-layout>
-        

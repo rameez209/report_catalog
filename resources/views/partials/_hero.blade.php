@@ -5,12 +5,11 @@
         style="background-image: url('images/laravel-logo.png')"></div>
 
     <div class="z-10">
-        {{-- <h1 class="text-6xl font-bold uppercase text-white">
-            <span>Departments</span>
-        </h1> --}}
+
         <p class="text-xl text-white font-bold my-4">
             {{-- Created on October 13, 2021 by Rameez Mohammad --}}
-            This page provides a comprehensive guide to reporting. The SJGH Report Catalog outlines the best practices and recommendations.
+            This page provides a comprehensive guide to reporting. The SJGH Report Catalog outlines the best practices
+            and recommendations.
         </p>
 
         <div>
@@ -29,12 +28,12 @@
     @foreach ($reports->unique('Department') as $rpt)
         <a href="/?department={{ $rpt->Department }}">
             <div class="bg-laravel hover:bg-department m-0 p-2 text-white rounded-lg text-center">
-                {{-- <div class="h-22 w-55"> --}}
-                {{ $rpt->Department}}
+                {{ $rpt->Department }}
             </div>
         </a>
     @endforeach
 </div>
+
 {{-- <div class="flex flex-col items-center w-1/6">
         <li class="flex items-center justify-center text-white rounded-xl py-1 px-3 mr-2 text-xs">
                 <a href="/?department={{ $rpt->Department }}">{{ $rpt->Department }}</a>

@@ -20,6 +20,7 @@ return new class extends Migration
             // $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('Department')->nullable();
             $table->string('report_name')->nullable();
+            $table->string('key_terms')->nullable();
             $table->string('requested_by')->nullable();
             $table->string('validated_by')->nullable();
             $table->string('frequency')->nullable();

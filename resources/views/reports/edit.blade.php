@@ -31,6 +31,17 @@
             </div>
 
             <div class="mb-6">
+                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms</label>
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms" 
+                    value="{{ $report->key_terms }}"
+                    placeholder="Seperate by comma: Ex. Diabetes, ... " />
+
+                    @error('key_terms')
+                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
+            </div>
+
+            <div class="mb-6">
                 <label for="validated_by" class="inline-block text-lg mb-2">Validated By</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="validated_by"
                     value="{{ $report->validated_by }}" placeholder="Example: Remote, Boston MA, etc" />
@@ -39,7 +50,7 @@
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-            
+
             <div class="mb-6">
                 <label for="frequency" class="inline-block text-lg mb-2">Frequency</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="frequency"

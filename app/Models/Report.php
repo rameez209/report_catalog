@@ -15,11 +15,14 @@ class Report extends Model
         if($filters['department'] ?? false) {
             $query->where('department', 'like', '%' . request('department') . '%');
         }
-
+        if($filters['key_terms'] ?? false) {
+            $query->where('key_terms', 'like', '%' . request('key_terms') . '%');
+        }
         if($filters['search'] ?? false) {
             $query->where('report_name', 'like', '%' . request('search') . '%')
             ->orWhere('description', 'like', '%' . request('search') . '%')
-            ->orWhere('department', 'like', '%' . request('search') . '%');
+            ->orWhere('department', 'like', '%' . request('search') . '%')
+            ->orWhere('key_terms', 'like', '%' . request('search') . '%');
         }
     }
 

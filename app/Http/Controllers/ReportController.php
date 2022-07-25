@@ -15,6 +15,8 @@ class ReportController extends Controller
 
         $dprtmnt = DB::table('reports')->select('Department')->orderBy('Department', 'asc')->distinct()->get();
         // dd($dprtmnt);
+
+        // dd(request('key_terms'));
         
          return view('reports.index', [
              'reports' => report::latest()->filter(request(['department', 'search']))->get()
@@ -39,10 +41,8 @@ class ReportController extends Controller
     {
         $formFields = $request->validate([
             'report_name' => 'required',
-            // Key Terms 
-            // ex. diebetics 
-            // 'Department' => ['required', Rule::unique('reports', 'Department')],
-            'Department' => 'required',
+            'key_terms' => ['required', Rule::unique('reports', 'key_terms')],
+            'Department' => ['required', Rule::unique('reports', 'Department')],
             // 'requested_by' => 'required',
             'validated_by' => 'required',
             'frequency' => ['required'],
@@ -77,6 +77,7 @@ class ReportController extends Controller
         
         $formFields = $request->validate([
             'report_name' => 'required',
+            'key_terms' => ['required'],
             'Department' => ['required'],
             // 'requested_by' => 'required',
             'validated_by' => 'required',

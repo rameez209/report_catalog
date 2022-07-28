@@ -2,7 +2,7 @@
     <a href="/" class="inline-block text-black ml-4 mb-4"><i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
-        
+
         <x-card class="p-10">
             <p class="text-3xl mb-2 text-lg-center items-center justify-center">{{ $report->report_name }}</p>
             <div class="flex flex-col items-left justify-left ">
@@ -11,7 +11,7 @@
                     <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
                 </div>
 
-                
+                {{-- Line divider --}}
                 <div class="border border-gray-200 w-full mb-6"></div>
                 <div>
                     <x-report-department :departmentCsv="$report->Department" />
@@ -35,14 +35,21 @@
                                     Website</a
                                     > --}}
                     </div>
-                        <x-report-Keyterm :KeytermsCsv="$report->key_terms" />
-                        <div class="text-lg my-4">
-                            <i class="fa-solid fa fa-clock"></i> {{ $report->frequency }}
-                        </div>
+                    <x-report-Keyterm :KeytermsCsv="$report->key_terms" />
+                    <div class="text-lg my-4">
+                        <i class="fa-solid fa fa-clock"></i> {{ $report->frequency }}
+                    </div>
                 </div>
-                <img class="w-48 mr-6 mb-6"
-                    src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
-                    alt="" />
+                <div class="border border-gray-200 w-full mb-6"></div>
+                {{-- AlpineJS to toggle the report screenshot --}}
+                <div x-data="{ open: false } ">
+                    <button x-on:click="open =! open" class="bg-transparent hover:bg-department font-semibold hover:text-white py-2 px-4 mb-4 border border-department hover:border-transparent rounded">How to run the report</button>
+                    <div x-show="open">
+                        <img class="object-contain max-w-2xl h-auto"
+                            src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
+                            alt="screenshot of how to run {{ $report->report_name }} report." />
+                    </div>
+                </div>
             </div>
         </x-card>
         <x-card class="mt-4 p-2 flex space-x-6 justify-end">

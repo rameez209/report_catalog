@@ -13,13 +13,13 @@ class ReportController extends Controller
      // Show all reports
      public function index() {
 
-        $dprtmnt = DB::table('reports')->select('Department')->orderBy('Department', 'asc')->distinct()->get();
-        // dd($dprtmnt);
+        // $dprtmnt = DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get();
 
         // dd(request('key_terms'));
         
          return view('reports.index', [
-             'reports' => report::latest()->filter(request(['department', 'search']))->get()
+             'reports' => report::latest()->filter(request(['department', 'search']))->get(),
+             'departments' => DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get(),
             ]);
         }
  

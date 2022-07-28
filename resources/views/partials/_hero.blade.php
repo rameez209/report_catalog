@@ -21,18 +21,24 @@
     </div>
 </section>
 
-<div class="grid lg:grid-cols-6 md:grid-cols-6 sm:grid-cols-4 gap-10 m-10 ">
-    {{-- {{DB::table('reports')->select('Department')->orderBy('Department', 'asc')->distinct()->get();}} --}}
+{{-- {{DB::table('reports')->select('Department')->orderBy('Department', 'asc')->distinct()->get();}} --}}
 
-    {{-- Used unique() function to get the one value of each departments --}}
-    @foreach ($reports->unique('Department') as $rpt)
-        <a href="/?department={{ $rpt->Department }}">
-            <div class="bg-laravel hover:bg-department m-0 p-2 text-white rounded-lg text-center">
-                {{ $rpt->Department }}
+{{-- Used unique() function to get the one value of each departments --}}
+<div class="grid lg:grid-cols-6 md:grid-cols-6 sm:grid-cols-4 gap-10 m-10 ">
+    @foreach ($departments->unique('departments') as $rpt)
+   
+        <a href="/?department={{ $rpt->departments }}">
+            <div class="bg-black hover:bg-department m-0 p-2 text-white rounded-lg text-center">
+                {{-- {{ dd(explode(',',$rpt->Department)) }} --}}
+                {{ $rpt->departments }}
             </div>
         </a>
     @endforeach
 </div>
+
+
+
+
 
 {{-- <div class="flex flex-col items-center w-1/6">
         <li class="flex items-center justify-center text-white rounded-xl py-1 px-3 mr-2 text-xs">

@@ -11,7 +11,7 @@
         @csrf
         <div class="mb-6">
             <label for="report_name" class="inline-block text-lg mb-2">Report Name</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full" name="report_name" value="{{old('report_name')}}" />
+            <input type="text" class="border border-gray-200 rounded p-2 w-full" placeholder="Report Name" name="report_name" value="{{old('report_name')}}" />
 
             @error('report_name')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -22,7 +22,7 @@
         <div class="mb-6">
             <label for="Department" class="inline-block text-lg mb-2">Department</label>
             <input type="text" class="border border-gray-200 rounded p-2 w-full" name="Department" value="{{old('Department')}}"
-                placeholder="Example: Senior Laravel Developer" />
+                placeholder="Ex. Admission" />
 
                 @error('Department')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -32,7 +32,7 @@
         <div class="mb-6">
             <label for="key_terms" class="inline-block text-lg mb-2">Key Terms</label>
             <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms" value="{{old('key_terms')}}"
-                placeholder="Seperate by comma: Ex. Diabetes, ... " />
+                placeholder="Seperate by comma: Ex. Diabetes, Covid, ... " />
 
                 @error('key_terms')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -42,7 +42,7 @@
         <div class="mb-6">
             <label for="validated_by" class="inline-block text-lg mb-2">Validated by</label>
             <input type="text" class="border border-gray-200 rounded p-2 w-full" name="validated_by" value="{{old('validated_by')}}"
-                placeholder="Example: Remote, Boston MA, etc" />
+                placeholder="Validated by " />
 
                 @error('validated_by')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -51,7 +51,7 @@
 
         <div class="mb-6">
             <label for="frequency" class="inline-block text-lg mb-2">Frequency</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full" name="frequency" value="{{old('frequency')}}" />
+            <input type="text" class="border border-gray-200 rounded p-2 w-full" name="frequency" placeholder="Ex. Daily" value="{{old('frequency')}}" />
             @error('frequency')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
@@ -59,7 +59,7 @@
 
         <div class="mb-6">
             <label for="updated_by" class="inline-block text-lg mb-2">Updated_by</label>
-            <input type="text" class="border border-gray-200 rounded p-2 w-full" name="updated_by" value="{{old('updated_by')}}" />
+            <input type="text" class="border border-gray-200 rounded p-2 w-full" name="updated_by" placeholder="Ex. Name, on 02/22/2022" value="{{old('updated_by')}}" />
             @error('updated_by')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror
@@ -81,7 +81,7 @@
                 Description
             </label>
             <textarea class="border border-gray-200 rounded p-2 w-full" name="description" value="{{old('description')}}" rows="10"
-                placeholder="Include tasks, requirements, salary, etc"></textarea>
+                placeholder="Description"></textarea>
                 @error('description')
                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
             @enderror

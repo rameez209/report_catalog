@@ -7,7 +7,7 @@
     <div class="z-10">
 
         <p class="text-xl text-white font-bold my-4">
-            {{-- Created on October 13, 2021 by Rameez Mohammad --}}
+            
             This page provides a comprehensive guide to reporting. The SJGH Report Catalog outlines the best practices
             and recommendations.
         </p>
@@ -28,11 +28,12 @@
     @foreach ($departments->unique('departments') as $rpt)
    
         <a href="/?department={{ $rpt->departments }}">
-            <div class="bg-black hover:bg-department m-0 p-2 text-white rounded-lg text-center">
+            <div class="bg-department hover:bg-laravel m-0 p-2 text-white rounded-lg text-center">
                 {{-- {{ dd(explode(',',$rpt->Department)) }} --}}
-                {{ $rpt->departments }}
+               {{ $rpt->departments }}
             </div>
         </a>
+
     @endforeach
 </div>
 

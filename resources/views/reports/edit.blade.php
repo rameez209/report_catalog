@@ -29,6 +29,28 @@
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
+            {{-- Drop down list for Departments --}}
+            {{-- <div class="mb-6">
+                <label for="Department" class="inline-block text-lg mb-2">Department</label>
+                @php
+                    $dpts = DB::table('departments')
+                        ->select('departments')
+                        ->orderBy('departments', 'asc')
+                        ->distinct()
+                        ->get();
+                @endphp
+
+                <select name="Department" class="border border-gray-200 rounded p-2 w-full">
+                    <option selected disabled>Select a department</option>
+                    @foreach ($dpts as $dpt)
+                        <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>
+                    @endforeach
+                </select>
+
+                @error('Department')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div> --}}
 
             <div class="mb-6">
                 <label for="key_terms" class="inline-block text-lg mb-2">Key Terms</label>
@@ -72,7 +94,7 @@
 
             <div class="mb-6">
                 <label for="updated_by" class="inline-block text-lg mb-2">
-                    updated_by/Application URL
+                    Updated by
                 </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="updated_by"
                     value="{{ $report->updated_by }}" />
@@ -80,17 +102,6 @@
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-
-            {{-- <div class="mb-6">
-                <label for="Department" class="inline-block text-lg mb-2">
-                    Department (Comma Separated)
-                </label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="Department"
-                    value="{{ $report->Department }}" placeholder="Example: Laravel, Backend, Postgres, etc" />
-                @error('Department')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div> --}}
 
             <div class="mb-6">
                 <label for="screenshot" class="inline-block text-lg mb-2">

@@ -29,7 +29,7 @@
 </head>
 
 <body class="mb-48">
-    <nav class="sticky top-0 z-50 flex justify-between items-center mb-4 pl-4 pb-4 bg-white">
+    <nav class="sticky top-0 z-50 flex justify-between items-center mb-2 pl-4 pt-2 pb-2 bg-white">
         <a href="/">
             {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
             <h1 class="text-2xl font-bold uppercase text-laravel">
@@ -88,7 +88,7 @@
 
         {{-- <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p> --}}
         <a href="/reports/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">
-            Add a Report
+            Add Report
         </a>
 
     </footer>

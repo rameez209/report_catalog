@@ -12,11 +12,6 @@ class ReportController extends Controller
 {
      // Show all reports
      public function index() {
-
-        // $dprtmnt = DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get();
-
-        // dd(request('key_terms'));
-        
          return view('reports.index', [
              'reports' => report::latest()->filter(request(['department', 'search']))->get(),
              'departments' => DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get(),
@@ -41,7 +36,8 @@ class ReportController extends Controller
     {
         $formFields = $request->validate([
             'report_name' => 'required',
-            'key_terms' => ['required', Rule::unique('reports', 'key_terms')],
+            // 'key_terms' => Rule::unique('reports', 'key_terms'),
+            'key_terms' => 'nullable',
             'Department' => ['required', Rule::unique('reports', 'Department')],
             // 'requested_by' => 'required',
             'validated_by' => 'required',
@@ -77,7 +73,7 @@ class ReportController extends Controller
         
         $formFields = $request->validate([
             'report_name' => 'required',
-            'key_terms' => ['required'],
+            'key_terms' => ['nullable'],
             'Department' => ['required'],
             // 'requested_by' => 'required',
             'validated_by' => 'required',
@@ -93,6 +89,7 @@ class ReportController extends Controller
         $report->update($formFields);
 
         return back()->with('success', 'Report updated successfully!');
+        // return redirect("/")->with('success', 'Report updated successfully!');
     }
 
     // Delete report

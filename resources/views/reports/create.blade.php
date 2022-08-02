@@ -46,7 +46,7 @@
             </div>
 
             <div class="mb-6">
-                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms</label>
+                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms (Optional)</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms"
                     value="{{ old('key_terms') }}" placeholder="Seperate by comma: Ex. Diabetes, Covid, ... " />
 
@@ -98,8 +98,8 @@
                 <label for="description" class="inline-block text-lg mb-2">
                     Description
                 </label>
-                <textarea class="border border-gray-200 rounded p-2 w-full" name="description" value="{{ old('description') }}"
-                    rows="10" placeholder="Description"></textarea>
+                <textarea class="border border-gray-200 rounded p-2 w-full" name="description" 
+                    rows="10" placeholder="Descriptions">{{ old('description') }}</textarea>
                 @error('description')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror

@@ -15,7 +15,7 @@
         <div>
             <a href="/reports/create"
                 class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">
-                add the report
+                add report
             </a>
         </div>
     </div>

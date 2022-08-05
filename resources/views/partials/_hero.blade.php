@@ -1,42 +1,51 @@
-{{-- @props(['reports']) --}}
-
 <section class="relative h-72 bg-laravel flex flex-col justify-center align-center text-center space-y-4 mb-4">
     <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"
         style="background-image: url('images/laravel-logo.png')"></div>
 
     <div class="z-10">
-
         <p class="text-xl text-white font-bold my-4">
-            
             This page provides a comprehensive guide to reporting. The SJGH Report Catalog outlines the best practices
             and recommendations.
         </p>
 
         <div>
-            <a href="/reports/create"
+            <div class="inline-block py-2 px-8">
+                <a href="#" target="_blank"><button
+                        class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">claims
+                        - denials dashboard <i class="fa fa-external-link"></i></button></a>
+                <a href="#" target="_blank"><button
+                        class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">revenue
+                        usage <i class="fa fa-external-link"></i></button></a>
+                <a href="#" target="_blank"><button
+                        class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">SJGH
+                        Balanced scorecard <i class="fa fa-external-link"></i></button></a>
+            </div>
+            {{-- <a href="/reports/create"
                 class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">
                 add report
-            </a>
+            </a> --}}
         </div>
     </div>
 </section>
 
-{{-- {{DB::table('reports')->select('Department')->orderBy('Department', 'asc')->distinct()->get();}} --}}
 
-{{-- Used unique() function to get the one value of each departments --}}
-<div class="grid lg:grid-cols-6 md:grid-cols-6 sm:grid-cols-4 gap-10 m-10 ">
-    @foreach ($departments->unique('departments') as $rpt)
-   
-        <a href="/?department={{ $rpt->departments }}">
-            <div class="bg-department hover:bg-laravel m-0 p-2 text-white rounded-lg text-center">
-                {{-- {{ dd(explode(',',$rpt->Department)) }} --}}
-               {{ $rpt->departments }}
-            </div>
-        </a>
-
-    @endforeach
-</div>
-
+{{-- AlpineJS to toggle the report screenshot --}}
+{{-- <div x-data="{ open: false }">
+    <button x-on:click="open =! open"
+        class="bg-transparent hover:bg-department font-semibold hover:text-white py-2 px-4 mb-4 ml-5 hover:border-transparent rounded">
+        Show Departments <i class="fa fa-angle-down"></i> </button>
+    <div x-show="open">
+        <div class="grid lg:grid-cols-6 md:grid-cols-6 sm:grid-cols-4 gap-5 m-10 ">
+            @foreach ($departments->unique('departments') as $rpt)
+                <a href="/?department={{ $rpt->departments }}">
+                    <div class="bg-department hover:bg-laravel m-0 p-1 text-white rounded-md text-center">
+                        {{ $rpt->departments }}
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </div>
+</div> --}}
 
 
 

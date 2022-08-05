@@ -33,7 +33,7 @@
         <a href="/">
             {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
             <h1 class="text-2xl font-bold uppercase text-laravel">
-                {{-- Lara<span class="text-black">Gigs</span> --}}
+                {{-- Report<span class="text-black">Catalog</span> --}}
                 <span>SJGH Report Catalog</span>
             </h1>
         </a>

@@ -22,9 +22,9 @@
                 <i class="fa-solid fa fa-clock"></i> {{ $report->frequency }}
             </div>
             {{-- Key Terms --}}
-            <div class="text-bold">
+            {{-- <div class="text-bold">
                 <x-report-keyterm :keytermsCsv="$report->key_terms" />
-            </div>
+            </div> --}}
 
             <div class="text-xs mt-6 text-laravel">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}

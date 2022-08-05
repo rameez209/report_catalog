@@ -1,6 +1,6 @@
 <section class="relative h-72 bg-laravel flex flex-col justify-center align-center text-center space-y-4 mb-4">
     <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"
-        style="background-image: url('images/laravel-logo.png')"></div>
+        style="background-image: url('images/report image.jpeg')"></div>
 
     <div class="z-10">
         <p class="text-xl text-white font-bold my-4">
@@ -9,24 +9,25 @@
         </p>
 
         <div>
-            <div class="inline-block py-2 px-8">
-                <a href="#" target="_blank"><button
-                        class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">claims
-                        - denials dashboard <i class="fa fa-external-link"></i></button></a>
-                <a href="#" target="_blank"><button
-                        class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">revenue
-                        usage <i class="fa fa-external-link"></i></button></a>
-                <a href="#" target="_blank"><button
-                        class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">SJGH
-                        Balanced scorecard <i class="fa fa-external-link"></i></button></a>
-            </div>
-            {{-- <a href="/reports/create"
+            <a href="/reports/create"
                 class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">
                 add report
-            </a> --}}
+            </a>
         </div>
     </div>
 </section>
+<div class="flex items-center justify-center">
+    <a href="#" target="_blank"><button
+            class="min-w-max border-2 m-5 border-black text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department hover:border-department">claims
+            - denials dashboard <i class="fa fa-external-link"></i></button></a>
+    <a href="#" target="_blank"><button
+            class="min-w-max border-2 m-5 border-black text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department hover:border-department">revenue
+            usage <i class="fa fa-external-link"></i></button></a>
+    <a href="#" target="_blank"><button
+            class="min-w-max border-2 m-5 border-black text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department hover:border-department">SJGH
+            Balanced scorecard <i class="fa fa-external-link"></i></button></a>
+</div>
+
 
 
 {{-- AlpineJS to toggle the report screenshot --}}

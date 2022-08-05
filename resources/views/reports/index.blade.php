@@ -15,8 +15,6 @@
                     <hr>
                 @endforeach
             </div>
-
-            {{-- <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4"> --}}
             <div class="md:col-span-10 pl-6 space-y-6">
                 @unless(count($reports) == 0)
                     @foreach ($reports as $report)

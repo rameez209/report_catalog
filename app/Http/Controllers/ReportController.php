@@ -36,14 +36,14 @@ class ReportController extends Controller
     {
         $formFields = $request->validate([
             'report_name' => 'required',
-            // 'key_terms' => Rule::unique('reports', 'key_terms'),
             'key_terms' => 'nullable',
-            'Department' => ['required', Rule::unique('reports', 'Department')],
-            // 'requested_by' => 'required',
+            // 'Department' => ['required', Rule::unique('reports', 'Department')],
+            'Department' => ['required'],
             'validated_by' => 'required',
             'frequency' => ['required'],
             'updated_by' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            // 'run_descriptions' => 'nullable'
         ]);
 
         // Uploading the image to the report database
@@ -75,11 +75,11 @@ class ReportController extends Controller
             'report_name' => 'required',
             'key_terms' => ['nullable'],
             'Department' => ['required'],
-            // 'requested_by' => 'required',
             'validated_by' => 'required',
             'frequency' => ['required'],
             'updated_by' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            // 'run_descriptions' => 'nullable'
         ]);
 
         if ($request->hasFile('screenshot')) {
@@ -88,7 +88,7 @@ class ReportController extends Controller
 
         $report->update($formFields);
 
-        return back()->with('success', 'Report updated successfully!');
+        return back()->with('success', 'Report Updated Successfully!');
         // return redirect("/")->with('success', 'Report updated successfully!');
     }
 
@@ -101,7 +101,7 @@ class ReportController extends Controller
         // }
 
         $report->delete();
-        return redirect('/')->with('success', 'Report deleted successfully!');
+        return redirect('/')->with('success', 'Report Deleted Successfully!');
     }
 
     // Manage report

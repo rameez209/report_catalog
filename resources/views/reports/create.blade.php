@@ -33,7 +33,7 @@
                         ->get();
                 @endphp
 
-                <select name="Department" class="border border-gray-200 rounded p-2 w-full">
+                <select name="Department" multiple class="border border-gray-200 rounded p-2 w-full">
                     <option selected disabled>Select a department</option>
                     @foreach ($dpts as $dpt)
                         <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>

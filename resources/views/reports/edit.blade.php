@@ -130,6 +130,75 @@
             </div>
 
 
+
+
+            {{-- FOR THE BORDER --}}
+            <div class="border border-gray-200 w-full mb-6"></div>
+            
+            {{-- ----------------------- --}}
+            {{--   OPTIONAL FIELDS       --}}
+            {{--   HOW TO RUN THE REPORT --}}
+            {{-- ----------------------- --}}
+            
+            <div class="mb-6">
+                <label for="run_report_description" class="inline-block text-lg mb-2">
+                    How to run the report description (Optional)
+                </label>
+                <textarea class="border border-gray-200 rounded p-2 w-full" name="run_report_description" 
+                    rows="10" placeholder="ex. report location, and how to run it">{{ old('run_report_description') }}</textarea>
+                @error('run_report_description')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+             {{-- SCREENSHOT HOW-TO  --}}
+             <div class="mb-6">
+                <label for="screenshot" class="inline-block text-lg mb-2">
+                    Screen Shot: How to run the report (Optional)
+                </label>
+                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="screenshot" />
+                @error('screenshot')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- DATA EXTRACT LOCATION --}}
+            <div class="mb-6">
+                <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Link (Optional) </label>
+
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_link"
+                    placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)" value="{{ old('data_extract_location_link') }}" />
+
+                @error('data_extract_location_link')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- DATA EXTRACT LOCATION SCREENSHOT --}}
+            <div class="mb-6">
+                <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
+                    Data Extract Location Screen Shot (Optional)
+                </label>
+                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_screenshot" />
+                @error('data_extract_location_screenshot')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            {{-- REPORT EXAMPLE SCREENSHOT --}}
+            <div class="mb-6">
+                <label for="report_example_screenshot" class="inline-block text-lg mb-2">
+                   Report Example screen shot (Optional)
+                </label>
+                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="report_example_screenshot" />
+                @error('report_example_screenshot')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+            
+            
+            
+
+
             <div class="mb-6">
                 <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
                     Update Report

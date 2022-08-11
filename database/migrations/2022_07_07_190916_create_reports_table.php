@@ -27,7 +27,10 @@ return new class extends Migration
             $table->string('updated_by')->nullable();
             $table->string('screenshot')->nullable();
             $table->longText('description')->nullable();
-            // $table->string('run_report');
+            $table->string('run_report_description')->nullable(); // Descriptions for how to run the report 
+            $table->string('data_extract_location_link')->nullable(); // Link for data extract location 
+            $table->string('data_extract_location_screenshot')->nullable(); // Screenshot for data extract location
+            $table->string('report_example_screenshot')->nullable(); // screenshot for report example
             $table->timestamps();
         });
     }

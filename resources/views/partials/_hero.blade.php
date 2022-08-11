@@ -13,20 +13,23 @@
                 class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">
                 add report
             </a>
+            {{-- <a href="/reports/create" class="top-1/3 right-10 bg-black text-white py-2 px-5">
+                Add Report
+            </a> --}}
         </div>
     </div>
 </section>
-<div class="flex items-center justify-center">
-    <a href="#" target="_blank"><button
-            class="min-w-max border-2 m-5 border-black text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department hover:border-department">claims
-            - denials dashboard <i class="fa fa-external-link"></i></button></a>
-    <a href="#" target="_blank"><button
-            class="min-w-max border-2 m-5 border-black text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department hover:border-department">revenue
-            usage <i class="fa fa-external-link"></i></button></a>
-    <a href="#" target="_blank"><button
-            class="min-w-max border-2 m-5 border-black text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department hover:border-department">SJGH
-            Balanced scorecard <i class="fa fa-external-link"></i></button></a>
-</div>
+{{-- <div class="flex items-center justify-center">
+    <a href="#" target="_blank"
+            class="min-w-max m-5 text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department ">claims
+            - denials dashboard <i class="fa fa-external-link"></i></a>
+    <a href="#" target="_blank"
+            class="min-w-max m-5 text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department ">revenue
+            usage <i class="fa fa-external-link"></i></a>
+    <a href="#" target="_blank"
+            class="min-w-max m-5 text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department ">SJGH
+            Balanced scorecard <i class="fa fa-external-link"></i></a>
+</div> --}}
 
 
 

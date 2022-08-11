@@ -81,11 +81,22 @@
         {{ $slot }}
     </main>
     <footer
-        class="fixed bottom-0 left-0 w-full flex items-center justify-center font-bold bg-laravel text-white h-20 mt-20 opacity-90 md:justify-center">
+        class="fixed bottom-0 left-0 w-full flex items-center justify-center font-normal bg-laravel text-white h-20 mt-20 opacity-90 md:justify-center">
+        <div class="flex items-center justify-center">
+            <a href="#" target="_blank"
+                    class="min-w-max m-5 text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-gray-700 ">claims
+                    - denials dashboard <i class="fa fa-external-link"></i></a>
+            <a href="#" target="_blank"
+                    class="min-w-max m-5 text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-gray-700 ">revenue
+                    usage <i class="fa fa-external-link"></i></a>
+            <a href="#" target="_blank"
+                    class="min-w-max m-5 text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-gray-700 ">SJGH
+                    Balanced scorecard <i class="fa fa-external-link"></i></a>
+        </div>
         {{-- <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p> --}}
-        <a href="/reports/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">
+        {{-- <a href="/reports/create" class="absolute top-1/3 right-10 bg-black text-white py-2 px-5">
             Add Report
-        </a>
+        </a> --}}
     </footer>
     <x-flash-success />
 </body>

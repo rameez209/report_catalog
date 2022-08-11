@@ -5,20 +5,19 @@ $keyterms = explode(',', $keytermsCsv);
 @endphp
 
 <ul class="flex">
-    <div class="flex items-center justify-center bg-white rounded-xl mt-4 py-1 px-1 mr-3 text-sm font-bold">Keyterms:
+    <div class="flex items-center justify-center rounded-xl px-1 mr-3 text-lg font-semibold">Keyterms:
         {!! '&nbsp;' !!}
         @foreach ($keyterms as $keyterm)
             <li>
-                {{-- If keyterm field is empty display N/A --}}
+                {{-- DISPLAY N/A if KEYTERM FIELD IS EMPTY --}}
                 @if(!empty($keyterm))
                 {{-- Keyterms redirected to search --}}
-                <a class="hover:text-laravel "
+                <a class="font-normal hover:text-laravel text-department underline"
                     href="/?search={{ $keyterm }}">{{ $keyterm .","}}</a>{!! '&nbsp;' !!}
                 @else
-                    N/A   
+                   <p class="font-normal"> N/A </p>  
                 @endif
             </li>
-        
         @endforeach
     </div>
 </ul>

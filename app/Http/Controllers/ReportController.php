@@ -36,19 +36,28 @@ class ReportController extends Controller
     {
         $formFields = $request->validate([
             'report_name' => 'required',
-            'key_terms' => 'nullable',
+            'key_terms' => 'nullable', // optional
             // 'Department' => ['required', Rule::unique('reports', 'Department')],
             'Department' => ['required'],
             'validated_by' => 'required',
             'frequency' => ['required'],
             'updated_by' => 'required',
             'description' => 'required',
-            // 'run_descriptions' => 'nullable'
+            'run_report_description' => 'nullable', // Descriptions for how to run the report (optional)
+            'data_extract_location_link' => 'nullable', // Link for data extract location (optional)
+            'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
+            'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
         ]);
 
         // Uploading the image to the report database
         if ($request->hasFile('screenshot')) {
             $formFields['screenshot'] = $request->file('screenshot')->store('screenshots', 'public');
+        }
+        if ($request->hasFile('data_extract_location_screenshot')) {
+            $formFields['data_extract_location_screenshot'] = $request->file('data_extract_location_screenshot')->store('screenshots', 'public');
+        }
+        if ($request->hasFile('report_example_screenshot')) {
+            $formFields['report_example_screenshot'] = $request->file('report_example_screenshot')->store('screenshots', 'public');
         }
 
         $formFields['user_id'] = auth()->id();
@@ -79,11 +88,20 @@ class ReportController extends Controller
             'frequency' => ['required'],
             'updated_by' => 'required',
             'description' => 'required',
-            // 'run_descriptions' => 'nullable'
+            'run_report_description' => 'nullable', // Descriptions for how to run the report (optional)
+            'data_extract_location_link' => 'nullable', // Link for data extract location (optional)
+            'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
+            'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
         ]);
 
         if ($request->hasFile('screenshot')) {
             $formFields['screenshot'] = $request->file('screenshot')->store('screenshots', 'public');
+        }
+        if ($request->hasFile('data_extract_location_screenshot')) {
+            $formFields['data_extract_location_screenshot'] = $request->file('data_extract_location_screenshot')->store('screenshots', 'public');
+        }
+        if ($request->hasFile('report_example_screenshot')) {
+            $formFields['report_example_screenshot'] = $request->file('report_example_screenshot')->store('screenshots', 'public');
         }
 
         $report->update($formFields);

@@ -7,8 +7,8 @@
             <p class="text-3xl mb-2 text-lg-center items-center justify-center font-bold">
                 {{ $report->report_name }}
             </p>
-            
-            <div class="flex flex-col items-left justify-left ">
+
+            <div class="flex flex-col items-left justify-left">
 
                 <div class="text-sm mt-6 mb-6 text-department">
                     <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
@@ -34,7 +34,7 @@
                     </div>
                     {{-- LINE DIVIDER --}}
                     <div class="border border-gray-200 w-full mb-6"></div>
-                    
+
                     <div class="text-lg my-4">
                         <span class="font-semibold">Requested By: </span>{{ $report->Department }}
                     </div>
@@ -53,7 +53,7 @@
                 <div class="border border-gray-200 w-full mb-6"></div>
             </div>
         </x-card>
-        
+
         <x-card class="mt-4 p-2 flex space-x-6 justify-between">
 
             {{-- --------------------- --}}
@@ -62,22 +62,28 @@
 
             {{-- ALPINE-JS TO TOGGLE THE REPORT SCREENSHOT --}}
             <div class="ml-4" x-data="{ open: false }">
-                <button x-on:click="open =! open" 
+                <button x-on:click="open =! open"
                     class="text-department hover:text-laravel background-transparent uppercase px-3 py-1 outline-none focus:outline-none  rounded shadow-md mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button">How to run the report <i class="fa-solid fa-arrow-down"></i></button>
 
-                    
-                    <div x-show="open">
-                        <div>
-                            {{-- DESCRIPTIONS ON HOW TO RUN THE REPORT --}}
-                            <div class="text-lg space-y-6 mt-6 bg-white p-4">
-                                <p>
-                                    {{ $report->run_report_description }}
-                                </p>
-                            </div>
-                            <div class="mt-6 mb-6">
-                                <span class="font-semibold"> Data Extract Location</span> <a href="{{$report->data_extract_location_link}}" class="underline text-laravel">{{$report->data_extract_location_link}}</a>
-                            </div>
+
+                <div x-show="open">
+                    <div>
+                        {{-- DESCRIPTIONS ON HOW TO RUN THE REPORT --}}
+                        <div class="text-lg space-y-6 mt-6 bg-white p-4">
+                            <p>
+                                {{ $report->run_report_description }}
+                            </p>
+                        </div>
+                        <div class="mt-6 mb-6">
+                            <span class="font-semibold"> Data Extract Location: </span>
+                            {{-- ADDED THE 'FILE///' TO OPEN FILES ON THE LOCAL SERVERS --}}
+                            <a href="{{ 'file///' . $report->data_extract_location_link }}" {{-- DISABLE THE LINK WHEN THE USER DOES NOT INPUT DATA EXTRACT LOCATION --}}
+                                class="{{ $report->data_extract_location_link ? 'underline text-department hover:text-laravel' : 'pointer-events-none' }}">
+                                {{-- DISPLAY N/A IF THE USER DOES NOT INPUT THE DATA EXTRACT LOCATION --}}
+                                {{ $report->data_extract_location_link ? $report->data_extract_location_link : 'N/A' }}</a>
+
+                        </div>
                         <img class="object-contain max-w-2xl h-auto"
                             src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
                             alt="screenshot of how to run {{ $report->report_name }} report." />
@@ -93,7 +99,7 @@
                 <a href="/reports/{{ $report->id }}/edit">
                     <i class="fa-solid fa-pencil"></i> Edit
                 </a>
-                
+
                 <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
                     @csrf
                     @method('DELETE')

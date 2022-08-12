@@ -54,12 +54,11 @@
 
             <div class="mb-6">
                 <label for="key_terms" class="inline-block text-lg mb-2">Key Terms</label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms" 
-                    value="{{ $report->key_terms }}"
-                    placeholder="Seperate by comma: Ex. Diabetes, ... " />
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms"
+                    value="{{ $report->key_terms }}" placeholder="Seperate by comma: Ex. Diabetes, ... " />
 
-                    @error('key_terms')
-                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @error('key_terms')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -103,7 +102,7 @@
                 @enderror
             </div>
 
-            <div class="mb-6">
+            {{-- <div class="mb-6">
                 <label for="screenshot" class="inline-block text-lg mb-2">
                     Screenshot: How to run report
                 </label>
@@ -116,14 +115,14 @@
                 @error('screenshot')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-            </div>
+            </div> --}}
 
             <div class="mb-6">
                 <label for="description" class="inline-block text-lg mb-2">
                     Description
                 </label>
-                <textarea class="border border-gray-200 rounded p-2 w-full text-black-50" name="description"
-                    rows="10" placeholder="Description"> {{$report->description}} </textarea>
+                <textarea class="border border-gray-200 rounded p-2 w-full text-black-50" name="description" rows="10"
+                    placeholder="Description"> {{ $report->description }} </textarea>
                 @error('description')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -134,40 +133,64 @@
 
             {{-- FOR THE BORDER --}}
             <div class="border border-gray-200 w-full mb-6"></div>
-            
+
             {{-- ----------------------- --}}
-            {{--   OPTIONAL FIELDS       --}}
-            {{--   HOW TO RUN THE REPORT --}}
+            {{-- OPTIONAL FIELDS --}}
+            {{-- HOW TO RUN THE REPORT --}}
             {{-- ----------------------- --}}
-            
+
+
             <div class="mb-6">
                 <label for="run_report_description" class="inline-block text-lg mb-2">
                     How to run the report description (Optional)
                 </label>
-                <textarea class="border border-gray-200 rounded p-2 w-full" name="run_report_description" 
-                    rows="10" placeholder="ex. report location, and how to run it">{{ old('run_report_description') }}</textarea>
-                @error('run_report_description')
+                <textarea class="border border-gray-200 rounded p-2 w-full text-black-50" name="run_report_description" rows="10"
+                    placeholder="ex. report location, and how to run it"> {{ $report->run_report_description }} </textarea>
+                @error('description')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
-             {{-- SCREENSHOT HOW-TO  --}}
-             <div class="mb-6">
+            {{-- SCREENSHOT HOW-TO --}}
+            <div class="mb-6">
                 <label for="screenshot" class="inline-block text-lg mb-2">
                     Screen Shot: How to run the report (Optional)
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="screenshot" />
+                <img class="w-48 mr-6 mb-6"
+                    src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
+                    alt="" />
                 @error('screenshot')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
+            {{-- <div class="mb-6">
+                <label for="screenshot" class="inline-block text-lg mb-2">
+                    Screenshot: How to run report
+                </label>
+                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="screenshot" />
+
+                <img class="w-48 mr-6 mb-6"
+                    src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
+                    alt="" />
+
+                @error('screenshot')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div> --}}
+
+
+
             {{-- DATA EXTRACT LOCATION --}}
             <div class="mb-6">
-                <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Link (Optional) </label>
+                <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Link
+                    (Optional) </label>
 
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_link"
-                    placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)" value="{{ old('data_extract_location_link') }}" />
+                <input type="text" class="border border-gray-200 rounded p-2 w-full"
+                    name="data_extract_location_link"
+                    placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)"
+                    value="{{ $report->data_extract_location_link }}"/>
 
                 @error('data_extract_location_link')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -179,7 +202,13 @@
                 <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
                     Data Extract Location Screen Shot (Optional)
                 </label>
-                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_screenshot" />
+                <input type="file" class="border border-gray-200 rounded p-2 w-full"
+                    name="data_extract_location_screenshot" />
+
+                <img class="w-48 mr-6 mb-6"
+                    src="{{ $report->data_extract_location_screenshot ? asset('storage/' . $report->data_extract_location_screenshot) : asset('/images/no-image.png') }}"
+                    alt="" />
+
                 @error('data_extract_location_screenshot')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -187,16 +216,18 @@
             {{-- REPORT EXAMPLE SCREENSHOT --}}
             <div class="mb-6">
                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
-                   Report Example screen shot (Optional)
+                    Report Example screen shot (Optional)
                 </label>
-                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="report_example_screenshot" />
+                <input type="file" class="border border-gray-200 rounded p-2 w-full"
+                    name="report_example_screenshot" />
+
+                <img class="w-48 mr-6 mb-6"
+                    src="{{ $report->report_example_screenshot ? asset('storage/' . $report->report_example_screenshot) : asset('/images/no-image.png') }}"
+                    alt="Report Example" />
                 @error('report_example_screenshot')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-            
-            
-            
 
 
             <div class="mb-6">

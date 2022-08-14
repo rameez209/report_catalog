@@ -8,7 +8,7 @@
             <div class="md:col-span-3 p-4 space-y-4 bg-gray-50 border border-gray-200 rounded">
                 @foreach ($departments->unique('departments') as $rpt)
                     <li class="list-none hover:text-laravel hover:border-r-4 border-laravel text-black font-semibold">
-                        <a class="m-0 pl-2 rounded-md text-md leading-3" href="/?department={{ $rpt->departments }}">
+                        <a class="m-0 pl-2 rounded-md text-md leading-3" href="/?department={{ $rpt->departments}}">
                             {{ $rpt->departments }}
                         </a>
                     </li>

@@ -38,7 +38,7 @@ class ReportController extends Controller
             'report_name' => 'required',
             'key_terms' => 'nullable', // optional
             // 'Department' => ['required', Rule::unique('reports', 'Department')],
-            'Department' => ['required'],
+            'department' => ['required'],
             'validated_by' => 'required',
             'frequency' => ['required'],
             'updated_by' => 'required',
@@ -83,7 +83,7 @@ class ReportController extends Controller
         $formFields = $request->validate([
             'report_name' => 'required',
             'key_terms' => ['nullable'],
-            'Department' => ['required'],
+            'department' => ['required'],
             'validated_by' => 'required',
             'frequency' => ['required'],
             'updated_by' => 'required',

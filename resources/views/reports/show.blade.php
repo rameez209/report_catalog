@@ -19,7 +19,7 @@
 
                 <div>
                     {{-- <span class="font-semibold">Requested By: </span> --}}
-                    <x-report-department :departmentCsv="$report->Department" />
+                    <x-report-department :departmentCsv="$report->department" />
 
                     <div class="text-lg space-y-6 mt-6">
                         <p>
@@ -36,7 +36,7 @@
                     <div class="border border-gray-200 w-full mb-6"></div>
 
                     <div class="text-lg my-4">
-                        <span class="font-semibold">Requested By: </span>{{ $report->Department }}
+                        <span class="font-semibold">Requested By: </span>{{ $report->department }}
                     </div>
                     <div class="text-lg my-4">
                         <span class="font-semibold">Frequency: </span>{{ $report->frequency }}

@@ -23,7 +23,7 @@
 
             {{-- DROP DOWN LIST FOR DEPARTMENTS --}}
             <div class="mb-6">
-                <label for="Department" class="inline-block text-lg mb-2">Department</label>
+                <label for="departments" class="inline-block text-lg mb-2">Department</label>
                 @php
                     $dpts = DB::table('departments')
                         ->select('departments')
@@ -32,7 +32,7 @@
                         ->get();
                 @endphp
 
-                <select name="Department" multiple class="border border-gray-200 rounded p-2 w-full">
+                <select name="departments" multiple class="border border-gray-200 rounded p-2 w-full">
                     <option selected disabled>Select a department</option>
                     @foreach ($dpts as $dpt)
                         <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>

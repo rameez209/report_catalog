@@ -25,13 +25,13 @@
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="Department"
                     value="{{ $report->Department }}" placeholder="Example: Admission" />
 
-                @error('Department')
+                @error('department')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-            {{-- Drop down list for Departments --}}
+            {{-- Drop down list for departments --}}
             {{-- <div class="mb-6">
-                <label for="Department" class="inline-block text-lg mb-2">Department</label>
+                <label for="department" class="inline-block text-lg mb-2">department</label>
                 @php
                     $dpts = DB::table('departments')
                         ->select('departments')
@@ -40,14 +40,14 @@
                         ->get();
                 @endphp
 
-                <select name="Department" class="border border-gray-200 rounded p-2 w-full">
+                <select name="department" class="border border-gray-200 rounded p-2 w-full">
                     <option selected disabled>Select a department</option>
                     @foreach ($dpts as $dpt)
                         <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>
                     @endforeach
                 </select>
 
-                @error('Department')
+                @error('department')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div> --}}

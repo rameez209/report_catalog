@@ -20,7 +20,7 @@ class ReportFactory extends Factory
             'department' => $this->faker->sentence(),
             'report_name' => 'active encounters',
             // 'requested_by' => $this->faker->company()
-            'requested_by' => $this->faker->Department()
+            'requested_by' => $this->faker->department()
         ];
     }
 }

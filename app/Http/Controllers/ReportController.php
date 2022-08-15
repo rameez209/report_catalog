@@ -38,15 +38,15 @@ class ReportController extends Controller
             'report_name' => 'required',
             'key_terms' => 'nullable', // optional
             // 'Department' => ['required', Rule::unique('reports', 'Department')],
-            'department' => ['required'],
+            'Department' => ['required'],
             'validated_by' => 'required',
             'frequency' => ['required'],
             'updated_by' => 'required',
             'description' => 'required',
             'run_report_description' => 'nullable', // Descriptions for how to run the report (optional)
             'data_extract_location_link' => 'nullable', // Link for data extract location (optional)
-            'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
-            'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
+            // 'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
+            // 'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
         ]);
 
         // Uploading the image to the report database
@@ -67,6 +67,7 @@ class ReportController extends Controller
         return redirect('/')->with('success', 'Report added successfully!');
     }
 
+
     // Show Edit Form
     public function edit(Report $report) {
         return view('reports.edit', ['report' => $report]);
@@ -82,16 +83,17 @@ class ReportController extends Controller
         
         $formFields = $request->validate([
             'report_name' => 'required',
-            'key_terms' => ['nullable'],
-            'department' => ['required'],
+            'key_terms' => 'nullable', // optional
+            // 'Department' => ['required', Rule::unique('reports', 'Department')],
+            'Department' => ['required'],
             'validated_by' => 'required',
             'frequency' => ['required'],
             'updated_by' => 'required',
             'description' => 'required',
             'run_report_description' => 'nullable', // Descriptions for how to run the report (optional)
             'data_extract_location_link' => 'nullable', // Link for data extract location (optional)
-            'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
-            'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
+            // 'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
+            // 'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
         ]);
 
         if ($request->hasFile('screenshot')) {

@@ -23,7 +23,7 @@
 
             {{-- DROP DOWN LIST FOR DEPARTMENTS --}}
             <div class="mb-6">
-                <label for="departments" class="inline-block text-lg mb-2">Department</label>
+                <label for="Department" class="inline-block text-lg mb-2">Department</label>
                 @php
                     $dpts = DB::table('departments')
                         ->select('departments')
@@ -32,7 +32,7 @@
                         ->get();
                 @endphp
 
-                <select name="departments" multiple class="border border-gray-200 rounded p-2 w-full">
+                <select name="Department" multiple class="border border-gray-200 rounded p-2 w-full">
                     <option selected disabled>Select a department</option>
                     @foreach ($dpts as $dpt)
                         <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>
@@ -130,7 +130,7 @@
 
             {{-- DATA EXTRACT LOCATION --}}
             <div class="mb-6">
-                <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Link (Optional) </label>
+                <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Path (Optional) </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_link"
                     placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)" value="{{ old('data_extract_location_link') }}" />
                 @error('data_extract_location_link')
@@ -141,7 +141,7 @@
             {{-- DATA EXTRACT LOCATION SCREENSHOT --}}
             <div class="mb-6">
                 <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
-                    Data Extract Location Screen Shot (Optional)
+                    Data Extract Location Path Screenshot (Optional)
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_screenshot" />
                 @error('data_extract_location_screenshot')
@@ -151,7 +151,7 @@
             {{-- REPORT EXAMPLE SCREENSHOT --}}
             <div class="mb-6">
                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
-                   Report Example screen shot (Optional)
+                   Example screenshot (Optional)
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="report_example_screenshot" />
                 @error('report_example_screenshot')

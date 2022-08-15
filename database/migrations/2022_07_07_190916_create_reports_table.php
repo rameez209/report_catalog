@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reports', function (Blueprint $table) {
+        Schema::create('reports', function(Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
             // To delete the reports for the deleted users, use the onDelete('cascade') function

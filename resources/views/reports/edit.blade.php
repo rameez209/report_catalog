@@ -128,9 +128,6 @@
                 @enderror
             </div>
 
-
-
-
             {{-- FOR THE BORDER --}}
             <div class="border border-gray-200 w-full mb-6"></div>
 
@@ -138,7 +135,6 @@
             {{-- OPTIONAL FIELDS --}}
             {{-- HOW TO RUN THE REPORT --}}
             {{-- ----------------------- --}}
-
 
             <div class="mb-6">
                 <label for="run_report_description" class="inline-block text-lg mb-2">

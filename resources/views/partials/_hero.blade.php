@@ -1,21 +1,19 @@
-<section class="relative h-72 bg-laravel flex flex-col justify-center align-center text-center space-y-4 mb-4">
-    <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"
-        style="background-image: url('images/report image.jpeg')"></div>
+
+<section class="relative h-72  flex flex-col justify-center align-center text-center space-y-4 mb-4 bg-white">
+    {{-- <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"
+        style="background-image: url('images/report image.jpeg')"></div> --}}
 
     <div class="z-10">
-        <p class="text-xl text-white font-bold my-4">
+        <p class="text-xl text-black font-bold my-4">
             This page provides a comprehensive guide to reporting. The SJGH Report Catalog outlines the best practices
             and recommendations.
         </p>
 
         <div>
             <a href="/reports/create"
-                class="inline-block border-2 border-white text-white py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">
-                add report
+                class="btn btn-info inline-block border-2 border-laravel  py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">
+                <i class="fa fa-plus-circle"></i> add report
             </a>
-            {{-- <a href="/reports/create" class="top-1/3 right-10 bg-black text-white py-2 px-5">
-                Add Report
-            </a> --}}
         </div>
     </div>
 </section>

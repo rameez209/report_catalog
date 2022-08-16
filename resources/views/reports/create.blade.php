@@ -32,7 +32,7 @@
                         ->get();
                 @endphp
 
-                <select name="Department" multiple class="border border-gray-200 rounded p-2 w-full">
+                <select name="Department" class="border border-gray-200 rounded p-2 w-full">
                     <option selected disabled>Select a department</option>
                     @foreach ($dpts as $dpt)
                         <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>
@@ -43,6 +43,7 @@
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
+
 
             {{-- KEY TERMS --}}
             <div class="mb-6">
@@ -85,14 +86,14 @@
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-           
+
             {{-- REPORT DESCRIPTION --}}
             <div class="mb-6">
                 <label for="description" class="inline-block text-lg mb-2">
                     Report Description
                 </label>
-                <textarea class="border border-gray-200 rounded p-2 w-full" name="description" 
-                    rows="10" placeholder="Report Description">{{ old('description') }}</textarea>
+                <textarea class="border border-gray-200 rounded p-2 w-full" name="description" rows="10"
+                    placeholder="Report Description">{{ old('description') }}</textarea>
                 @error('description')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -100,25 +101,25 @@
 
             {{-- FOR THE BORDER --}}
             <div class="border border-gray-200 w-full mb-6"></div>
-            
+
             {{-- ----------------------- --}}
-            {{--   OPTIONAL FIELDS       --}}
-            {{--   HOW TO RUN THE REPORT --}}
+            {{-- OPTIONAL FIELDS --}}
+            {{-- HOW TO RUN THE REPORT --}}
             {{-- ----------------------- --}}
-            
+
             <div class="mb-6">
                 <label for="run_report_description" class="inline-block text-lg mb-2">
                     How to run the report description (Optional)
                 </label>
-                <textarea class="border border-gray-200 rounded p-2 w-full" name="run_report_description" 
-                    rows="10" placeholder="ex. report location, and how to run it">{{ old('run_report_description') }}</textarea>
+                <textarea class="border border-gray-200 rounded p-2 w-full" name="run_report_description" rows="10"
+                    placeholder="ex. report location, and how to run it">{{ old('run_report_description') }}</textarea>
                 @error('run_report_description')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
-             {{-- SCREENSHOT HOW-TO  --}}
-             <div class="mb-6">
+            {{-- SCREENSHOT HOW-TO --}}
+            <div class="mb-6">
                 <label for="screenshot" class="inline-block text-lg mb-2">
                     Screen Shot: How to run the report (Optional)
                 </label>
@@ -130,9 +131,12 @@
 
             {{-- DATA EXTRACT LOCATION --}}
             <div class="mb-6">
-                <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Path (Optional) </label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_link"
-                    placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)" value="{{ old('data_extract_location_link') }}" />
+                <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Path
+                    (Optional) </label>
+                <input type="text" class="border border-gray-200 rounded p-2 w-full"
+                    name="data_extract_location_link"
+                    placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)"
+                    value="{{ old('data_extract_location_link') }}" />
                 @error('data_extract_location_link')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -143,24 +147,28 @@
                 <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
                     Data Extract Location Path Screenshot (Optional)
                 </label>
-                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="data_extract_location_screenshot" />
+                <input type="file" class="border border-gray-200 rounded p-2 w-full"
+                    name="data_extract_location_screenshot" />
                 @error('data_extract_location_screenshot')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
+            
             {{-- REPORT EXAMPLE SCREENSHOT --}}
             <div class="mb-6">
                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
-                   Example screenshot (Optional)
+                    Example screenshot (Optional)
                 </label>
-                <input type="file" class="border border-gray-200 rounded p-2 w-full" name="report_example_screenshot" />
+                <input type="file" class="border border-gray-200 rounded p-2 w-full"
+                    name="report_example_screenshot" />
                 @error('report_example_screenshot')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="mb-6">
-                <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+                {{-- <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"> --}}
+                <button class="btn btn-success">
                     Add Report
                 </button>
                 <a href="/" class="text-black ml-4"> Back </a>

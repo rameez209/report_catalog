@@ -17,6 +17,8 @@
         </div>
     </div>
 </section>
+
+
 {{-- <div class="flex items-center justify-center">
     <a href="#" target="_blank"
             class="min-w-max m-5 text-black py-2 px-8 rounded-xl uppercase mt-2 hover:text-department ">claims

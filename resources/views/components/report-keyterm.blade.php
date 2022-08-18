@@ -5,7 +5,7 @@ $keyterms = explode(',', $keytermsCsv);
 @endphp
 
 <ul class="flex">
-    <div class="flex items-center justify-center rounded-xl px-1 mr-3 text-lg font-semibold">Keyterms:
+    <div class="flex items-center justify-center rounded-xl px-1 mr-3 mt-2 text-xs ">Keyterms:
         {!! '&nbsp;' !!}
         @foreach ($keyterms as $keyterm)
             <li>

@@ -1,10 +1,10 @@
 
-<section class="relative h-72  flex flex-col justify-center align-center text-center space-y-4 mb-4 bg-white">
-    {{-- <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-no-repeat bg-center"
-        style="background-image: url('images/report image.jpeg')"></div> --}}
+<section class="relative h-72  flex flex-col justify-center align-center text-center space-y-4 mb-4 bg-sidenavcolor">
+    <div class="bg-hero absolute top-0 left-0 w-full h-full opacity-10 bg-repeat bg-center"
+        style="background-image: url('images/report-icon.jpg')"></div>
 
     <div class="z-10">
-        <p class="text-xl text-black font-bold my-4">
+        <p class="text-xl text-white font-bold my-4">
             This page provides a comprehensive guide to reporting. The SJGH Report Catalog outlines the best practices
             and recommendations.
         </p>

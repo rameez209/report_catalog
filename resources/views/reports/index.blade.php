@@ -2,8 +2,8 @@
     @include('partials._hero')
     @include('partials._search')
 
-    <div>
-        <div class="grid lg:grid-cols-12">
+    <div class="lg:grid lg:grid-cols-2 gap-4 space-y-4 md:space-y-0 mx-4">
+        {{-- <div class="grid lg:grid-cols-12"> --}}
             {{-- USED unique() FUNCTION TO GET ONE VALUE FOR DEPARTMENTS --}}
             {{-- <div
                 class="md:col-span-3 sm:col-span-12 sm:ml-6 max-w-[80%] min-w-300 p-4 space-y-4 bg-gray-50 border border-gray-200">
@@ -16,7 +16,7 @@
                     </a>
                 @endforeach
             </div> --}}
-            <div class="md:col-span-9 pl-4 space-y-6">
+            {{-- <div class="md:col-span-9 pl-4 space-y-6"> --}}
                 @unless(count($reports) == 0)
                     @foreach ($reports as $report)
                         <x-report-card :report="$report" />
@@ -24,7 +24,7 @@
                 @else
                     <p>No reports found!</p>
                 @endunless
-            </div>
-        </div>
+            {{-- </div> --}}
+        {{-- </div> --}}
     </div>
 </x-layout>

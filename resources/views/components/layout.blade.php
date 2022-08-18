@@ -28,13 +28,19 @@
                         // department: "#008080",
                         department: "#33b5e5",
                         info: "#17a2b8",
-                        navbarcolor: "#363c3d"
+                        navbarcolor: "#363c3d",
+                        sidenavcolor: "#484c4d",
+                        greytext: "#333333",
                     },
                 },
             },
         };
     </script>
     <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
         .department-container {
             display: flex;
             justify-content: space-around;
@@ -54,23 +60,25 @@
 
         .sidenav {
             height: 100%;
-            /* margin-top: 50px; */
+            margin-top: 40px;
             width: 280px;
             position: fixed;
             z-index: 1;
             top: 0;
             left: 0;
             /* background-color: #111; */
-            background-color: #363c3d;
+            background-color: #484c4d;
             overflow-x: hidden;
             padding-top: 20px;
+
         }
 
         .sidenav a {
             padding: 6px 8px 6px 16px;
             text-decoration: none;
             font-size: 18px;
-            color: #cfcfcf;;
+            color: #cfcfcf;
+            ;
             display: block;
         }
 
@@ -83,7 +91,8 @@
             /* Same as the width of the sidenav */
             font-size: 18px;
             /* Increased text to enable scrolling */
-            padding: 0px 10px;
+            /* padding: 0px 10px; */
+
         }
 
         @media screen and (max-height: 450px) {
@@ -95,16 +104,23 @@
                 font-size: 18px;
             }
         }
+
+        .top-bar {
+            margin-left: -5px;
+            /* border-radius: 2px;
+            box-shadow: 0px 1px 10px #999; */
+        }
+        
     </style>
     <title>SJGH | Report Catalog</title>
 </head>
 
 <body class="mb-48 bg-white">
-    <nav class="sticky top-0 z-50 flex justify-between items-center mb-2 pl-4 pt-2 pb-2 bg-navbarcolor main">
+    <nav class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar border-b-2 border-sidenavcolor">
         <a href="/">
-            <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
-            <h1 class="text-2xl font-bold uppercase text-laravel drop-shadow-lg shadow-black">
-                Report<span class="text-black">Catalog</span>
+            {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
+            <h1 class="text-2xl font-bold uppercase text-laravel ">
+                {{-- Report<span class="text-black">Catalog</span> --}}
                 <span>SJGH Report Catalog</span>
             </h1>
         </a>
@@ -155,40 +171,50 @@
         </ul>
 
     </nav>
-    <div class="sidenav">
-        <li class="list-none mb-1 fs-3 text-white-300 font-semibold uppercase ml-2">Dashboard</li><br>
+    <div class="sidenav pb-10 border-r-2 border-navbarcolor">
+        {{-- <a href="/">
+            <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
+            <h1 class="text-3xl font-bold uppercase text-laravel drop-shadow-lg shadow-black">
+                Report<span class="text-black">Catalog</span>
+                <span>SJGH Report Catalog</span>
+            </h1>
+        </a> --}}
+        <li class="list-none mb-1 fs-4 text-[#808080] font-semibold uppercase ml-2 mt-4">Dashboard</li>
         <div class="flex flex-col align-left">
-            <a class="uppercase leading-3 " target="_blank" href="/">
-                <li class="btn mt-2 list-none flex justify-between text-white">
-                    claims  <i class="fa fa-external-link"></i>
+            <a class="uppercase leading-2 " target="_blank" href="/">
+                <li class="btn mt-0 list-none flex justify-between text-white">
+                    claims <i class="fa fa-external-link"></i>
                 </li>
             </a>
             <a class="uppercase leading-3 " target="_blank" href="/">
                 <li class="btn mt-2 list-none flex justify-between text-white">
-                    Revenue Usage  <i class="fa fa-external-link"></i>
+                    Revenue Usage <i class="fa fa-external-link"></i>
                 </li>
             </a>
             <a class="uppercase leading-3 " target="_blank" href="/">
                 <li class="btn mt-2 list-none flex justify-between text-white">
-                    Balance Scorecard  <i class="fa fa-external-link"></i>
+                    Balance Scorecard <i class="fa fa-external-link"></i>
                 </li>
             </a>
-            
         </div>
-            {{--  IMPORT departments VARIABLE FROM THE DATABASE --}}
-            <li class="list-none fs-3 mt-5 text-white-300 font-semibold uppercase ml-2">Departments</li>
-            @php
-                $departments = DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get()
-            @endphp
-            @foreach ($departments->unique('departments') as $rpt)
-                <a class="uppercase leading-3 " href="/?department={{ $rpt->departments }}">
-                    <li class="btn mt-2 list-none text-white flex justify-between">
-                        <span>{{ $rpt->departments }}</span> <i class="fas fa-folder-open "></i>
-                    </li>
-                </a>
-                {{-- <hr> --}}
-            @endforeach
-       
+        {{-- IMPORT departments VARIABLE FROM THE DATABASE --}}
+        <li class="list-none fs-4 mt-5 text-[#808080] font-semibold uppercase ml-2">Departments</li>
+        @php
+            $departments = DB::table('departments')
+                ->select('departments')
+                ->orderBy('departments', 'asc')
+                ->distinct()
+                ->get();
+        @endphp
+        @foreach ($departments->unique('departments') as $rpt)
+            <a class="uppercase leading-3 " href="/?department={{ $rpt->departments }}">
+                <li class="btn mt-2 list-none text-white flex justify-between">
+                    <span>{{ $rpt->departments }}</span> <i class="fas fa-folder-open "></i>
+                </li>
+            </a>
+            {{-- <hr> --}}
+        @endforeach
+
     </div>
     <main class="main">
         {{-- VIEW OUTPUT --}}

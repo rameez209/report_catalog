@@ -110,6 +110,9 @@
             /* border-radius: 2px;
             box-shadow: 0px 1px 10px #999; */
         }
+        .title-shadow {
+            text-shadow: 1px 1px 1px black;
+        }
         
     </style>
     <title>SJGH | Report Catalog</title>
@@ -121,7 +124,7 @@
             {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
             <h1 class="text-2xl font-bold uppercase text-laravel ">
                 {{-- Report<span class="text-black">Catalog</span> --}}
-                <span>SJGH Report Catalog</span>
+                <span class="title-shadow">SJGH Report Catalog</span>
             </h1>
         </a>
         <ul class="flex space-x-6 mr-6 text-lg text-white">
@@ -129,7 +132,7 @@
             @auth
                 {{-- SHOW IF THE USER IS LOGGED IN --}}
                 <li>
-                    <span class="font-bold uppercase">
+                    <span class="font-bold uppercase title-shadow">
                         Welcome {{ auth()->user()->name }}
                     </span>
                 </li>

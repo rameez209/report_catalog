@@ -1,20 +1,28 @@
 @props(['report'])
 
 <x-card>
-    
-    <div class="card">
-        <h5 class="card-header bg-navbarcolor"><x-report-department :departmentCsv="$report->Department" /></h5>
-        <div class="card-body">
-          <h1 class="card-title text-2xl"><a href="/reports/{{ $report->id }}">{{ $report->report_name }}</a></h1>
-          <div class="text-xs mt-2 mb-2 text-laravel">
-            <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
-        </div>
-          <p class="card-text text-xs">{{ $report->description }}</p>
-          <x-report-keyterm :keytermsCsv="$report->key_terms" />
-        </div>
-      </div>
 
-      {{-- <div class="card mt-30">
+    <div class="card">
+        <div>
+
+        </div>
+        <h5 class="card-header bg-navbarcolor flex justify-between">
+            <x-report-department :departmentCsv="$report->Department" />
+            <div class="text-xs text-white pt-1 title-shadow">
+                <i class="fa-solid fa fa-clock"></i> {{ $report->frequency }}
+            </div>
+        </h5>
+        <div class="card-body">
+            <h1 class="card-title text-2xl"><a href="/reports/{{ $report->id }}">{{ $report->report_name }}</a></h1>
+            <div class="text-xs mt-2 mb-2 text-laravel">
+                <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
+            </div>
+            <p class="card-text text-xs">{{ $report->description }}</p>
+            <x-report-keyterm :keytermsCsv="$report->key_terms" />
+        </div>
+    </div>
+
+    {{-- <div class="card mt-30">
         <h5 class="card-header">Featured</h5>
         <div class="card-body">
           <h5 class="card-title">Special title treatment</h5>

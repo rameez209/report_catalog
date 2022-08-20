@@ -1,5 +1,5 @@
 <x-layout>
-    <a href="/" class="inline-block text-black ml-4 mb-4 mt-10"><i class="fa-solid fa-arrow-left"></i>  Back
+    <a href="/" class="inline-block text-black ml-4 mb-4 mt-10"><i class="fa-solid fa-arrow-left"></i> Back
     </a>
     <div class="mx-4">
 
@@ -69,8 +69,25 @@
 
                 <div x-show="open">
                     <div>
+                        <div class="card">
+                            <div class="card-body">
                         {{-- DESCRIPTIONS ON HOW TO RUN THE REPORT --}}
-                        <div class="text-lg space-y-6 mt-6 bg-white p-4">
+                              <h5 class="card-title font-semibold">How to run report: </h5>
+                              <p class="card-text">
+                                {{ $report->run_report_description }}
+                              </p>
+                              {{-- <p class="card-text">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                              </p> --}}
+                            </div>
+                            <img class="object-contain max-w-2xl h-auto"
+                                src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
+                                alt="screenshot of how to run {{ $report->report_name }} report." />
+                          </div>
+
+
+
+                        {{-- <div class="text-lg space-y-6 mt-6 bg-white p-4">
                             <span class="font-semibold">How to run report: </span>
                             <p>
                                 {{ $report->run_report_description }}
@@ -78,20 +95,43 @@
                             <img class="object-contain max-w-2xl h-auto"
                                 src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
                                 alt="screenshot of how to run {{ $report->report_name }} report." />
-                        </div>
+                        </div> --}}
 
-                        <div class="mt-6 mb-6 text-lg space-y-6 bg-white p-4">
-                            <span class="font-semibold"> Data Extract Location: </span>
-                            {{-- ADDED THE 'FILE///' TO OPEN FILES ON THE LOCAL SERVERS --}}
-                            <a href="{{ 'file///' . $report->data_extract_location_link }}" {{-- DISABLE THE LINK WHEN THE USER DOES NOT INPUT DATA EXTRACT LOCATION --}}
-                                class="{{ $report->data_extract_location_link ? 'underline text-department hover:text-laravel' : 'pointer-events-none' }}">
-                                {{-- DISPLAY N/A IF THE USER DOES NOT INPUT THE DATA EXTRACT LOCATION --}}
-                                {{ $report->data_extract_location_link ? $report->data_extract_location_link : 'N/A' }}</a>
 
+
+
+
+
+                     
+                        <div class="card mb-3 mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title font-semibold">Data Extract Location</h5>
+                                {{-- ADDED THE 'FILE///' TO OPEN FILES ON THE LOCAL SERVERS --}}
+                                <p class="card-text">
+                                    <a href="{{ 'file///' . $report->data_extract_location_link }}"
+                                        {{-- DISABLE THE LINK WHEN THE USER DOES NOT INPUT DATA EXTRACT LOCATION --}}
+                                        class="{{ $report->data_extract_location_link ? 'underline text-department hover:text-laravel' : 'pointer-events-none' }}">
+                                        {{-- DISPLAY N/A IF THE USER DOES NOT INPUT THE DATA EXTRACT LOCATION --}}
+                                        {{ $report->data_extract_location_link ? $report->data_extract_location_link : 'N/A' }}</a>
+                                </p>
+                                {{-- <p class="card-text">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                              </p> --}}
+                            </div>
                             <img class="object-contain max-w-2xl h-auto"
                                 src="{{ $report->data_extract_location_screenshot ? asset('storage/' . $report->data_extract_location_screenshot) : asset('/images/no-image.png') }}"
                                 alt="screenshot of how to run {{ $report->report_name }} report." />
                         </div>
+
+
+
+
+
+
+
+
+
+
 
                         <div class="mt-6 mb-6 text-lg space-y-6 bg-white p-4">
                             <span class="font-semibold">Example: </span>

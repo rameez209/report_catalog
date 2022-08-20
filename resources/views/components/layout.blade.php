@@ -49,7 +49,7 @@
             box-shadow: inset 1 0 4px #000000;
             font-family: 'Poppins', sans-serif;
         }
-
+        
         .department {
             min-width: 290px !important;
             max-width: 400px;
@@ -113,7 +113,9 @@
         .title-shadow {
             text-shadow: 1px 1px 1px black;
         }
-        
+        a:hover{
+            color: olivedrab;
+        }
     </style>
     <title>SJGH | Report Catalog</title>
 </head>

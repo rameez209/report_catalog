@@ -3,9 +3,7 @@
 <x-card>
 
     <div class="card">
-        <div>
-
-        </div>
+        
         <h5 class="card-header bg-navbarcolor flex justify-between">
             <x-report-department :departmentCsv="$report->Department" />
             <div class="text-xs text-white pt-1 title-shadow">
@@ -21,16 +19,6 @@
             <x-report-keyterm :keytermsCsv="$report->key_terms" />
         </div>
     </div>
-
-    {{-- <div class="card mt-30">
-        <h5 class="card-header">Featured</h5>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div> --}}
-
 
     {{-- <div class="flex">
         <img class="hidden w-48 mr-6 md:block"

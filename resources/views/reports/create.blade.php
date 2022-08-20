@@ -103,8 +103,8 @@
             <div class="border border-gray-200 w-full mb-6"></div>
 
             {{-- ----------------------- --}}
-            {{-- OPTIONAL FIELDS --}}
-            {{-- HOW TO RUN THE REPORT --}}
+            {{-- OPTIONAL FIELDS         --}}
+            {{-- HOW TO RUN THE REPORT   --}}
             {{-- ----------------------- --}}
 
             <div class="mb-6">
@@ -173,6 +173,7 @@
                 </button>
                 <a href="/" class="text-black ml-4"> Back </a>
             </div>
+            
         </form>
     </x-card>
 </x-layout>

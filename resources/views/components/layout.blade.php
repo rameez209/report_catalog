@@ -18,6 +18,9 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     {{-- TAILWIND CSS --}}
     <script src="https://cdn.tailwindcss.com"></script>
+    {{-- JQUERY CDN --}}
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+
     <script>
         tailwind.config = {
             theme: {
@@ -49,7 +52,7 @@
             box-shadow: inset 1 0 4px #000000;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         .department {
             min-width: 290px !important;
             max-width: 400px;
@@ -110,10 +113,12 @@
             /* border-radius: 2px;
             box-shadow: 0px 1px 10px #999; */
         }
+
         .title-shadow {
             text-shadow: 1px 1px 1px black;
         }
-        a:hover{
+
+        a:hover {
             color: olivedrab;
         }
     </style>
@@ -121,10 +126,11 @@
 </head>
 
 <body class="mb-48 bg-white">
-    <nav class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar border-b-2 border-sidenavcolor">
+    <nav
+        class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar border-b-2 border-sidenavcolor">
         <a href="/">
             {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
-            <h1 class="text-2xl font-bold uppercase text-laravel ">
+            <h1 class="text-2xl font-bold uppercase text-laravel mytitle">
                 {{-- Report<span class="text-black">Catalog</span> --}}
                 <span class="title-shadow">SJGH Report Catalog</span>
             </h1>
@@ -177,6 +183,7 @@
 
     </nav>
     <div class="sidenav pb-10 border-r-2 border-navbarcolor">
+        
         {{-- <a href="/">
             <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
             <h1 class="text-3xl font-bold uppercase text-laravel drop-shadow-lg shadow-black">
@@ -201,6 +208,7 @@
                     Balance Scorecard <i class="fa fa-external-link"></i>
                 </li>
             </a>
+
         </div>
         {{-- IMPORT departments VARIABLE FROM THE DATABASE --}}
         <li class="list-none fs-4 mt-5 text-[#808080] font-semibold uppercase ml-2">Departments</li>
@@ -219,7 +227,8 @@
             </a>
             {{-- <hr> --}}
         @endforeach
-
+        {{-- SPACING --}}
+        <div class="mb-5"></div>
     </div>
     <main class="main">
         {{-- VIEW OUTPUT --}}
@@ -244,6 +253,14 @@
 
     {{-- MDB JAVASCRIPT --}}
     <script rel="stylesheet" src="{{ asset('mdb5-free-standard/js/mdb.min.js') }}"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".mytitle").click(function() {
+                $(".sidenav").hide();
+            })
+        })
+    </script>
 </body>
 
 </html>

@@ -22,7 +22,7 @@
             </div>
 
             {{-- DROP DOWN LIST FOR DEPARTMENTS --}}
-            <div class="mb-6">
+            {{-- <div class="mb-6">
                 <label for="Department" class="inline-block text-lg mb-2">Department</label>
                 @php
                     $dpts = DB::table('departments')
@@ -42,7 +42,35 @@
                 @error('Department')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
+            </div> --}}
+            <div class="mb-6">
+                {{-- <label for="Department" class="inline-block text-lg mb-2">Department</label> --}}
+                @php
+                    $dpts = DB::table('departments')
+                        ->select('departments')
+                        ->orderBy('departments', 'asc')
+                        ->distinct()
+                        ->get();
+                @endphp
+
+                <select name="Department"  
+                class="form-control kt-selectpicker"  multiple title="Choose one of the following...">
+                    {{-- <option selected disabled>Select a department</option> --}}
+                    {{-- @foreach ($dpts as $dpt)
+                        <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>
+                        @endforeach --}}
+                        
+                </select>
+
+                @error('Department')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
             </div>
+
+
+
+
+
 
 
             {{-- KEY TERMS --}}

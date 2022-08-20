@@ -11,7 +11,7 @@
             </div>
         </h5>
         <div class="card-body">
-            <h1 class="card-title text-2xl"><a href="/reports/{{ $report->id }}">{{ $report->report_name }}</a></h1>
+            <h2 class="card-title text-xl"><a href="/reports/{{ $report->id }}">{{ $report->report_name }}</a></h2>
             <div class="text-xs mt-2 mb-2 text-laravel">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
             </div>

@@ -4,6 +4,37 @@
     <div class="mx-4">
 
         <x-card class="p-10">
+
+            <div class="card">
+                <div class="card-header"><x-report-department :departmentCsv="$report->Department" /></div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ $report->report_name }}</h5>
+                    <p class="card-text">
+                        <small class="text-muted text-department text-sm"><i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by
+                            {{ $report->updated_by }}</small>
+                    </p>
+                    <p class="card-text"> {{ $report->description }}</p>
+                    {{-- ----------------------- --}}
+                    {{-- EDIT AND DELETE BUTTONS --}}
+                    {{-- ----------------------- --}}
+
+                    <div class="inline-flex items-baseline mr-4 mt-4 uppercase justify-end">
+                        <a href="/reports/{{ $report->id }}/edit">
+                            <i class="fa-solid fa-pencil"></i> Edit
+                        </a>
+
+                        <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="text-red-500 uppercase"><i class="fa-solid fa-trash"></i> Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
             <p class="text-3xl mb-2 text-lg-center items-center justify-center font-bold">
                 {{ $report->report_name }}
             </p>
@@ -54,6 +85,22 @@
             </div>
         </x-card>
 
+        {{-- ----------------------- --}}
+        {{-- EDIT AND DELETE BUTTONS --}}
+        {{-- ----------------------- --}}
+
+        <div class="inline-flex items-baseline mr-4 mt-4 uppercase justify-end">
+            <a href="/reports/{{ $report->id }}/edit">
+                <i class="fa-solid fa-pencil"></i> Edit
+            </a>
+
+            <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
+                @csrf
+                @method('DELETE')
+                <button class="text-red-500 uppercase"><i class="fa-solid fa-trash"></i> Delete</button>
+            </form>
+        </div>
+
         <x-card class="mt-4 p-2 flex space-x-6 justify-between">
 
             {{-- --------------------- --}}
@@ -66,43 +113,24 @@
                     class="text-department hover:text-laravel background-transparent uppercase px-3 py-1 outline-none focus:outline-none  rounded shadow-md mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button">How to run the report <i class="fa-solid fa-arrow-down"></i></button>
 
-
-                <div x-show="open">
+                <div x-show="open" class="mt-4">
                     <div>
                         <div class="card">
                             <div class="card-body">
-                        {{-- DESCRIPTIONS ON HOW TO RUN THE REPORT --}}
-                              <h5 class="card-title font-semibold">How to run report: </h5>
-                              <p class="card-text">
-                                {{ $report->run_report_description }}
-                              </p>
-                              {{-- <p class="card-text">
+                                {{-- DESCRIPTIONS ON HOW TO RUN THE REPORT --}}
+                                <h5 class="card-title font-semibold">How to run report: </h5>
+                                <p class="card-text">
+                                    {{ $report->run_report_description }}
+                                </p>
+                                {{-- <p class="card-text">
                                 <small class="text-muted">Last updated 3 mins ago</small>
                               </p> --}}
                             </div>
                             <img class="object-contain max-w-2xl h-auto"
                                 src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
                                 alt="screenshot of how to run {{ $report->report_name }} report." />
-                          </div>
+                        </div>
 
-
-
-                        {{-- <div class="text-lg space-y-6 mt-6 bg-white p-4">
-                            <span class="font-semibold">How to run report: </span>
-                            <p>
-                                {{ $report->run_report_description }}
-                            </p>
-                            <img class="object-contain max-w-2xl h-auto"
-                                src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
-                                alt="screenshot of how to run {{ $report->report_name }} report." />
-                        </div> --}}
-
-
-
-
-
-
-                     
                         <div class="card mb-3 mt-3">
                             <div class="card-body">
                                 <h5 class="card-title font-semibold">Data Extract Location</h5>
@@ -124,15 +152,6 @@
                         </div>
 
 
-
-
-
-
-
-
-
-
-
                         <div class="mt-6 mb-6 text-lg space-y-6 bg-white p-4">
                             <span class="font-semibold">Example: </span>
                             <img class="object-contain max-w-2xl h-auto"
@@ -143,21 +162,7 @@
                 </div>
             </div>
 
-            {{-- ----------------------- --}}
-            {{-- EDIT AND DELETE BUTTONS --}}
-            {{-- ----------------------- --}}
 
-            <div class="inline-flex items-baseline mr-4 uppercase">
-                <a href="/reports/{{ $report->id }}/edit">
-                    <i class="fa-solid fa-pencil"></i> Edit
-                </a>
-
-                <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
-                    @csrf
-                    @method('DELETE')
-                    <button class="text-red-500 uppercase"><i class="fa-solid fa-trash"></i> Delete</button>
-                </form>
-            </div>
         </x-card>
     </div>
 </x-layout>

@@ -11,7 +11,7 @@
 
         <div>
             <a href="/reports/create"
-                class="btn btn-info inline-block border-2 border-laravel  py-2 px-8 rounded-xl uppercase mt-2 hover:text-black hover:border-black">
+                class="btn btn-laravel bg-laravel inline-block border-2 border-department text-white py-2 px-8 rounded-xl uppercase mt-2 hover:font-semibold title-shadow">
                 <i class="fa fa-plus-circle"></i> add report
             </a>
         </div>

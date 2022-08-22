@@ -1,4 +1,15 @@
 <x-layout>
+    {{-- <div>
+        <label for="roles">Roles</label>
+        <option  disabled>choose department</option>
+        <select class="form-control selectpicker multi_select" multiple data-live-search="true">
+            <option value="Admission">Admission</option>
+            <option value="Labs">Labs</option>
+            <option value="HIM">HIM</option>
+            <option value="CareNet">CareNet</option>
+            <option value="Care Management">Care Management</option>
+        </select>
+    </div> --}}
 
     <x-card class="rounded max-w-lg mx-auto mt-24">
         <header class="text-center">
@@ -22,7 +33,7 @@
             </div>
 
             {{-- DROP DOWN LIST FOR DEPARTMENTS --}}
-            {{-- <div class="mb-6">
+            <div class="mb-6">
                 <label for="Department" class="inline-block text-lg mb-2">Department</label>
                 @php
                     $dpts = DB::table('departments')
@@ -42,31 +53,30 @@
                 @error('Department')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-            </div> --}}
-            <div class="mb-6">
-                {{-- <label for="Department" class="inline-block text-lg mb-2">Department</label> --}}
+            </div>
+            {{-- <div class="mb-6">
+                <label for="Department" class="inline-block text-lg mb-2">Department</label>
                 @php
                     $dpts = DB::table('departments')
                         ->select('departments')
                         ->orderBy('departments', 'asc')
                         ->distinct()
                         ->get();
+
                 @endphp
 
-                <select name="Department"  
-                class="form-control kt-selectpicker"  multiple title="Choose one of the following...">
-                    {{-- <option selected disabled>Select a department</option> --}}
-                    {{-- @foreach ($dpts as $dpt)
-                        <option value="{{ $dpt->departments }}">{{ $dpt->departments }}</option>
-                        @endforeach --}}
-                        
+                <select name="Department" class="form-control selectpicker multi_select full-width"
+                    data-silent-initial-value-set="true" multiple data-live-search="true"
+                    title="Choose one of the following...">
+                    @foreach ($dpts as $dpt)
+                        <option value="{{ $dpt->departments }} {{old('dpt-departments')}}">{{ $dpt->departments }}</option>
+                    @endforeach
                 </select>
 
                 @error('Department')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
-            </div>
-
+            </div> --}}
 
 
 
@@ -131,8 +141,8 @@
             <div class="border border-gray-200 w-full mb-6"></div>
 
             {{-- ----------------------- --}}
-            {{-- OPTIONAL FIELDS         --}}
-            {{-- HOW TO RUN THE REPORT   --}}
+            {{-- OPTIONAL FIELDS --}}
+            {{-- HOW TO RUN THE REPORT --}}
             {{-- ----------------------- --}}
 
             <div class="mb-6">
@@ -181,7 +191,7 @@
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-            
+
             {{-- REPORT EXAMPLE SCREENSHOT --}}
             <div class="mb-6">
                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
@@ -201,7 +211,17 @@
                 </button>
                 <a href="/" class="text-black ml-4"> Back </a>
             </div>
-            
+
+
+
         </form>
     </x-card>
 </x-layout>
+
+@push('scripts')
+    <script>
+        $(function() {
+            $('select').selectpicker();
+        });
+    </script>
+@endpush

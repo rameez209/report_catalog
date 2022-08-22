@@ -14,7 +14,7 @@ class ReportController extends Controller
      public function index() {
          return view('reports.index', [
              'reports' => report::latest()->filter(request(['department', 'search']))->get(),
-             'departments' => DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get(),
+            //  'departments' => DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get(),
             ]);
         }
  

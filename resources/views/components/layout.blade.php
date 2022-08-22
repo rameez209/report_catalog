@@ -19,7 +19,34 @@
     {{-- TAILWIND CSS --}}
     <script src="https://cdn.tailwindcss.com"></script>
     {{-- JQUERY CDN --}}
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    
+    
+
+    <!-- Latest compiled and minified CSS -->
+    {{-- <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"> --}}
+
+    <!-- Latest compiled and minified JavaScript -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script> --}}
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script> --}}
+
+
+    {{-- MULTI SELECT CDN --}}
+    <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css">
+    </link>
+    <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"></script> --}}
+
 
     <script>
         tailwind.config = {
@@ -119,8 +146,10 @@
         }
 
         a:hover {
-            color: olivedrab;
+            color: whitesmoke;
+            font-weight: bolder;
         }
+        
     </style>
     <title>SJGH | Report Catalog</title>
 </head>
@@ -135,7 +164,7 @@
                 <span class="title-shadow">SJGH Report Catalog</span>
             </h1>
         </a>
-        <ul class="flex space-x-6 mr-6 text-lg text-white">
+        <ul class="flex space-x-6 mr-6 text-lg text-white ">
 
             @auth
                 {{-- SHOW IF THE USER IS LOGGED IN --}}
@@ -145,12 +174,12 @@
                     </span>
                 </li>
                 <li>
-                    <a href="/reports/create" class="hover:text-laravel">
+                    <a href="/reports/create" class="hover:text-laravel title-shadow">
                         <i class="fa fa-plus-circle"></i> Add Report
                     </a>
                 </li>
                 <li>
-                    <a href="/reports/manage" class="hover:text-laravel">
+                    <a href="/reports/manage" class="hover:text-laravel title-shadow">
                         <i class="fa-solid fa-gear"></i>
                         Manage Reports
                     </a>
@@ -159,7 +188,7 @@
                 <li>
                     <form class="inline" method="POST" action="/logout">
                         @csrf
-                        <button type="submit" class="hover:text-laravel">
+                        <button type="submit" class="hover:text-laravel title-shadow">
                             <i class="fa-solid fa-door-closed"></i> Logout
                         </button>
                     </form>
@@ -167,13 +196,13 @@
             @else
                 {{-- Hide IF NO USER IS LOGGED IN --}}
                 <li>
-                    <a href="/register" class="hover:text-laravel">
+                    <a href="/register" class="hover:text-laravel title-shadow">
                         <i class="fa-solid fa-user-plus"></i>
                         Register
                     </a>
                 </li>
                 <li>
-                    <a href="/login" class="hover:text-laravel">
+                    <a href="/login" class="hover:text-laravel title-shadow">
                         <i class="fa-solid fa-arrow-right-to-bracket"></i>
                         Login
                     </a>
@@ -183,7 +212,7 @@
 
     </nav>
     <div class="sidenav pb-10 border-r-2 border-navbarcolor">
-        
+
         {{-- <a href="/">
             <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
             <h1 class="text-3xl font-bold uppercase text-laravel drop-shadow-lg shadow-black">
@@ -233,34 +262,24 @@
     <main class="main">
         {{-- VIEW OUTPUT --}}
         {{ $slot }}
+
     </main>
-    {{-- <footer
-        class="fixed bottom-0 left-0 w-full flex items-center justify-center font-normal bg-laravel text-white h-20 mt-20 opacity-90 md:justify-center">
-        <div class="flex items-center justify-center">
-            <a href="#" target="_blank"
-                class="min-w-max m-5 text-white py-2 px-8 rounded-xl uppercase mt-2 hover:underline hover:scale-105 ">claims
-                - denials dashboard <i class="fa fa-external-link"></i></a>
-            <a href="#" target="_blank"
-                class="min-w-max m-5 text-white py-2 px-8 rounded-xl uppercase mt-2 hover:underline hover:scale-105 ">revenue
-                usage <i class="fa fa-external-link"></i></a>
-            <a href="#" target="_blank"
-                class="min-w-max m-5 text-white py-2 px-8 rounded-xl uppercase mt-2 hover:underline hover:scale-105 ">SJGH
-                Balanced scorecard <i class="fa fa-external-link"></i></a>
-        </div>
-        <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
-    </footer> --}}
     <x-flash-success />
 
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     {{-- MDB JAVASCRIPT --}}
     <script rel="stylesheet" src="{{ asset('mdb5-free-standard/js/mdb.min.js') }}"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".mytitle").click(function() {
-                $(".sidenav").hide();
-            })
-        })
-    </script>
+   <script>
+     $(function() {
+            // $(".object-contain").hide();
+            $(".object-contain").click(function() {
+                $(this).toggleClass('max-w-full h-auto', 'max-w-xs');
+            });
+        });
+   </script>
 </body>
 
 </html>

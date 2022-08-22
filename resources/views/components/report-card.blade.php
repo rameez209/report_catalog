@@ -12,11 +12,13 @@
         </h5>
         <div class="card-body">
             <h2 class="card-title text-xl"><a href="/reports/{{ $report->id }}">{{ $report->report_name }}</a></h2>
-            <div class="text-xs mt-2 mb-2 text-laravel">
+            <div class="text-xs mb-3 text-laravel">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
             </div>
             <p class="card-text text-xs">{{ $report->description }}</p>
-            <x-report-keyterm :keytermsCsv="$report->key_terms" />
+            <div class="text-xs">
+                <x-report-keyterm :keytermsCsv="$report->key_terms" />
+            </div>
         </div>
     </div>
 

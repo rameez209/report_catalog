@@ -146,7 +146,7 @@
         }
 
         a:hover {
-            color: whitesmoke;
+            color: inherit;
             font-weight: bolder;
         }
         
@@ -156,7 +156,7 @@
 
 <body class="mb-48 bg-white">
     <nav
-        class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar border-b-2 border-sidenavcolor">
+        class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar ">
         <a href="/">
             {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
             <h1 class="text-2xl font-bold uppercase text-laravel mytitle">

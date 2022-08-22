@@ -1,15 +1,11 @@
 <x-layout>
-    {{-- <div>
-        <label for="roles">Roles</label>
-        <option  disabled>choose department</option>
-        <select class="form-control selectpicker multi_select" multiple data-live-search="true">
-            <option value="Admission">Admission</option>
-            <option value="Labs">Labs</option>
-            <option value="HIM">HIM</option>
-            <option value="CareNet">CareNet</option>
-            <option value="Care Management">Care Management</option>
-        </select>
-    </div> --}}
+
+    
+
+
+
+
+
 
     <x-card class="rounded max-w-lg mx-auto mt-24">
         <header class="text-center">

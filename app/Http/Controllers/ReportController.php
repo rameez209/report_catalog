@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 
 class ReportController extends Controller
 {
@@ -108,8 +109,9 @@ class ReportController extends Controller
 
         $report->update($formFields);
 
-        return back()->with('success', 'Report Updated Successfully!');
-        // return redirect("/")->with('success', 'Report updated successfully!');
+
+        return redirect("/")->with('success',  ' Report Updated Successfully!');
+        // return back()->with('success', 'Report updated successfully!');
     }
 
     // Delete report

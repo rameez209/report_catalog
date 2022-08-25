@@ -1,27 +1,26 @@
-<x-layout>
+<x-layout class="text-center ">
 
     <!-- Section: Design Block -->
     <section class="text-center"
         style="
             /* background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg'); */
-            
             background: #FFFFFF;
             background: -webkit-linear-gradient(bottom, #FFFFFF, #363C3D);
             background: -moz-linear-gradient(bottom, #FFFFFF, #363C3D);
             background: linear-gradient(to top, #FFFFFF, #363C3D);
+            margin: 0, auto;
     ">
         <!-- Background image -->
         <div class="p-5 bg-image" style=" height: 300px; ">
         </div>
-        <!-- Background image -->
 
-        <div class="card mx-4 mx-md-5 shadow-5-strong "
+        <div class="card mx-4 mx-md-5 shadow-5-strong"
             style="
           margin-top: -100px;
           background: hsla(0, 0%, 100%, 0.8);
           backdrop-filter: blur(30px);
           ">
-            <div class="card-body py-5 px-md-5">
+            <div class="card-body py-5 px-md-5 ">
 
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
@@ -73,9 +72,9 @@
                 </div>
             </div>
         </div>
-        <div>
+        {{-- <div class="text-left">
             <small class="text-sidenavcolor">Copyright &copy; <?php echo date("Y"); ?> Engine Dome</small>
-        </div>
+        </div> --}}
     </section>
     <!-- Section: Design Block -->
 

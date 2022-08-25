@@ -86,7 +86,7 @@
 
                             {{-- KEY TERMS --}}
                             <div class="mb-6">
-                                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms (Optional)</label>
+                                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms <span class="text-[#808080]">(Optional)</span></label>
                                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms"
                                 value="{{ $report->key_terms }}"
                                     placeholder="Seperate by comma: Ex. Diabetes, Covid, ... " />
@@ -150,7 +150,7 @@
 
                             <div class="mb-6">
                                 <label for="run_report_description" class="inline-block text-lg mb-2">
-                                    How to run the report description (Optional)
+                                    How to run the report description <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <textarea class="border border-gray-200 rounded p-2 w-full text-black-50" name="run_report_description" rows="10"
                                     placeholder="ex. report location, and how to run it"> {{ $report->run_report_description }} </textarea>
@@ -162,7 +162,7 @@
                             {{-- SCREENSHOT HOW-TO --}}
                             <div class="mb-6">
                                 <label for="screenshot" class="inline-block text-lg mb-2">
-                                    Screen Shot: How to run the report (Optional)
+                                    Screen Shot: How to run the report <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="screenshot" />
                                 <img class="w-48 mr-6 mb-6"
@@ -176,7 +176,7 @@
                             {{-- DATA EXTRACT LOCATION --}}
                             <div class="mb-6">
                                 <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Path
-                                    (Optional) </label>
+                                    <span class="text-[#808080]">(Optional)</span> </label>
                 
                                 <input type="text" class="border border-gray-200 rounded p-2 w-full"
                                     name="data_extract_location_link"
@@ -191,7 +191,7 @@
                             {{-- DATA EXTRACT LOCATION SCREENSHOT --}}
                             <div class="mb-6">
                                 <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
-                                    Data Extract Location Path Screenshot (Optional)
+                                    Data Extract Location Path Screenshot <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                                     name="data_extract_location_screenshot" />
@@ -208,7 +208,7 @@
                             {{-- REPORT EXAMPLE SCREENSHOT --}}
                             <div class="mb-6">
                                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
-                                    Report Example screenshot (Optional)
+                                    Report Example screenshot <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                                     name="report_example_screenshot" />
@@ -335,7 +335,7 @@
 
             <div class="mb-6">
                 <label for="run_report_description" class="inline-block text-lg mb-2">
-                    How to run the report description (Optional)
+                    How to run the report description <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <textarea class="border border-gray-200 rounded p-2 w-full text-black-50" name="run_report_description" rows="10"
                     placeholder="ex. report location, and how to run it"> {{ $report->run_report_description }} </textarea>
@@ -346,7 +346,7 @@
 
             <div class="mb-6">
                 <label for="screenshot" class="inline-block text-lg mb-2">
-                    Screen Shot: How to run the report (Optional)
+                    Screen Shot: How to run the report <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="screenshot" />
                 <img class="w-48 mr-6 mb-6"
@@ -360,7 +360,7 @@
             
             <div class="mb-6">
                 <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Path
-                    (Optional) </label>
+                    <span class="text-[#808080]">(Optional)</span> </label>
 
                 <input type="text" class="border border-gray-200 rounded p-2 w-full"
                     name="data_extract_location_link"
@@ -374,7 +374,7 @@
 
             <div class="mb-6">
                 <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
-                    Data Extract Location Path Screenshot (Optional)
+                    Data Extract Location Path Screenshot <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                     name="data_extract_location_screenshot" />
@@ -390,7 +390,7 @@
         
             <div class="mb-6">
                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
-                    Report Example screen shot (Optional)
+                    Report Example screen shot <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                     name="report_example_screenshot" />

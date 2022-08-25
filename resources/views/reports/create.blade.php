@@ -98,7 +98,7 @@
 
                             {{-- KEY TERMS --}}
                             <div class="mb-6">
-                                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms (Optional)</label>
+                                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms <span class="text-[#808080]">(Optional)</span></label>
                                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms"
                                     value="{{ old('key_terms') }}"
                                     placeholder="Seperate by comma: Ex. Diabetes, Covid, ... " />
@@ -161,7 +161,7 @@
 
                             <div class="mb-6">
                                 <label for="run_report_description" class="inline-block text-lg mb-2">
-                                    How to run the report description (Optional)
+                                    How to run the report description <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <textarea class="border border-gray-200 rounded p-2 w-full" name="run_report_description" rows="10"
                                     placeholder="ex. report location, and how to run it">{{ old('run_report_description') }}</textarea>
@@ -173,7 +173,7 @@
                             {{-- SCREENSHOT HOW-TO --}}
                             <div class="mb-6">
                                 <label for="screenshot" class="inline-block text-lg mb-2">
-                                    Screen Shot: How to run the report (Optional)
+                                    Screen Shot: How to run the report <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                                     name="screenshot" />
@@ -186,7 +186,7 @@
                             <div class="mb-6">
                                 <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract
                                     Location Path
-                                    (Optional) </label>
+                                    <span class="text-[#808080]">(Optional)</span> </label>
                                 <input type="text" class="border border-gray-200 rounded p-2 w-full"
                                     name="data_extract_location_link"
                                     placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)"
@@ -199,7 +199,7 @@
                             {{-- DATA EXTRACT LOCATION SCREENSHOT --}}
                             <div class="mb-6">
                                 <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
-                                    Data Extract Location Path Screenshot (Optional)
+                                    Data Extract Location Path Screenshot <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                                     name="data_extract_location_screenshot" />
@@ -211,7 +211,7 @@
                             {{-- REPORT EXAMPLE SCREENSHOT --}}
                             <div class="mb-6">
                                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
-                                    Example screenshot (Optional)
+                                    Example screenshot <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                                     name="report_example_screenshot" />
@@ -294,7 +294,7 @@
 
 
             <div class="mb-6">
-                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms (Optional)</label>
+                <label for="key_terms" class="inline-block text-lg mb-2">Key Terms <span class="text-[#808080]">(Optional)</span></label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="key_terms"
                     value="{{ old('key_terms') }}" placeholder="Seperate by comma: Ex. Diabetes, Covid, ... " />
 
@@ -346,7 +346,7 @@
 
             <div class="mb-6">
                 <label for="run_report_description" class="inline-block text-lg mb-2">
-                    How to run the report description (Optional)
+                    How to run the report description <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <textarea class="border border-gray-200 rounded p-2 w-full" name="run_report_description" rows="10"
                     placeholder="ex. report location, and how to run it">{{ old('run_report_description') }}</textarea>
@@ -357,7 +357,7 @@
 
             <div class="mb-6">
                 <label for="screenshot" class="inline-block text-lg mb-2">
-                    Screen Shot: How to run the report (Optional)
+                    Screen Shot: How to run the report <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="screenshot" />
                 @error('screenshot')
@@ -367,7 +367,7 @@
 
             <div class="mb-6">
                 <label for="data_extract_location_link" class="inline-block text-lg mb-2">Data Extract Location Path
-                    (Optional) </label>
+                    <span class="text-[#808080]">(Optional)</span> </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full"
                     name="data_extract_location_link"
                     placeholder="copy and paste url (Ex. //sjgh-fs19-02/acct2$/DECISION SUPPORT/DA2 Cerner Extracts)"
@@ -379,7 +379,7 @@
 
             <div class="mb-6">
                 <label for="data_extract_location_screenshot" class="inline-block text-lg mb-2">
-                    Data Extract Location Path Screenshot (Optional)
+                    Data Extract Location Path Screenshot <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                     name="data_extract_location_screenshot" />
@@ -390,7 +390,7 @@
 
             <div class="mb-6">
                 <label for="report_example_screenshot" class="inline-block text-lg mb-2">
-                    Example screenshot (Optional)
+                    Example screenshot <span class="text-[#808080]">(Optional)</span>
                 </label>
                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                     name="report_example_screenshot" />

@@ -11,22 +11,24 @@ use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
 
 class ReportController extends Controller
 {
-     // Show all reports
-     public function index() {
-         return view('reports.index', [
-             'reports' => report::latest()->filter(request(['department', 'search']))->get(),
+    // Show all reports
+    public function index()
+    {
+        return view('reports.index', [
+            'reports' => report::latest()->filter(request(['department', 'search']))->paginate(2)
             //  'departments' => DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get(),
-            ]);
-        }
- 
-     // Show single report
-     public function show(report $report) {
-         return view('reports.show', [
-             'report' => $report
-         ]);
-     }
+        ]);
+    }
 
-     // Show create form
+    // Show single report
+    public function show(report $report)
+    {
+        return view('reports.show', [
+            'report' => $report
+        ]);
+    }
+
+    // Show create form
     public function create()
     {
         return view('reports.create');
@@ -46,8 +48,6 @@ class ReportController extends Controller
             'description' => 'required',
             'run_report_description' => 'nullable', // Descriptions for how to run the report (optional)
             'data_extract_location_link' => 'nullable', // Link for data extract location (optional)
-            // 'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
-            // 'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
         ]);
 
         // Uploading the image to the report database
@@ -70,7 +70,8 @@ class ReportController extends Controller
 
 
     // Show Edit Form
-    public function edit(Report $report) {
+    public function edit(Report $report)
+    {
         return view('reports.edit', ['report' => $report]);
     }
 
@@ -81,7 +82,7 @@ class ReportController extends Controller
         // if($report->user_id != auth()->id()) {
         //     abort(403, 'Unauthorized Action');
         // }
-        
+
         $formFields = $request->validate([
             'report_name' => 'required',
             'key_terms' => 'nullable', // optional
@@ -93,8 +94,6 @@ class ReportController extends Controller
             'description' => 'required',
             'run_report_description' => 'nullable', // Descriptions for how to run the report (optional)
             'data_extract_location_link' => 'nullable', // Link for data extract location (optional)
-            // 'data_extract_location_screenshot' => 'nullable', // Screenshot for data extract location (optional)
-            // 'report_example_screenshot' => 'nullable', // screenshot for report example (optional)
         ]);
 
         if ($request->hasFile('screenshot')) {
@@ -115,7 +114,8 @@ class ReportController extends Controller
     }
 
     // Delete report
-    public function destroy(report $report) {
+    public function destroy(report $report)
+    {
 
         // // Make sure logged in user is owner
         // if($report->user_id != auth()->id()) {
@@ -127,7 +127,8 @@ class ReportController extends Controller
     }
 
     // Manage report
-    public function manage() {
+    public function manage()
+    {
         return view('reports.manage', ['reports' => auth()->user()->reports()->get()]);
         // return view('reports.manage', ['reports' => auth()->user()->reports->get()]);
     }

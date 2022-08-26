@@ -27,4 +27,9 @@
             {{-- </div> --}}
         {{-- </div> --}}
     </div>
+
+    {{-- PAGINATION --}}
+    <div class="mt-6 p-4">
+        {{$reports->links()}}
+    </div>
 </x-layout>

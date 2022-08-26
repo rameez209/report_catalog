@@ -15,7 +15,7 @@ class ReportController extends Controller
     public function index()
     {
         return view('reports.index', [
-            'reports' => report::latest()->filter(request(['department', 'search']))->paginate(2)
+            'reports' => report::latest()->filter(request(['department', 'search']))->paginate(15) // PAGINATE FUNCTION WILL SHOW 12 REPORTS PER PAGE
             //  'departments' => DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get(),
         ]);
     }

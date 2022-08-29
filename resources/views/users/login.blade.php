@@ -33,8 +33,9 @@
 
                             <!-- Email input -->
                             <div class="mb-4">
-                            <div class="form-outline ">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}" />
+                                <div class="form-outline ">
+                                    <input type="email" class="form-control" name="email"
+                                        value="{{ old('email') }}" />
                                     <label for="email" class="form-label"><i class="fas fa-user"></i> Email</label>
                                 </div>
                                 @error('email')
@@ -44,9 +45,10 @@
 
                             <!-- Password input -->
                             <div class="mb-4">
-                            <div class="form-outline mb-4">
+                                <div class="form-outline mb-4">
                                     <input type="password" id="form3Example4" class="form-control" name="password" />
-                                    <label class="form-label" for="form3Example4"><i class="fas fa-lock"></i> Password</label>
+                                    <label class="form-label" for="form3Example4"><i class="fas fa-lock"></i>
+                                        Password</label>
                                     @error('password')
                                         <p class="text-red-500 text-xs">{{ $message }}</p>
                                     @enderror
@@ -54,11 +56,15 @@
                             </div>
 
                             <!-- Register -->
-                            <div class="form-check d-flex justify-content-center mb-4">
+                            <div class="form-check d-flex justify-between mb-4">
                                 <p>
                                     Don't have an account?
                                     <a href="/register" class="text-laravel">Register</a>
                                 </p>
+                                {{-- Forgot Password? --}}
+                                {{-- <p>
+                                    <a href="{{ url('/forgot_password') }}" class="text-laravel">Reset Password</a>
+                                </p> --}}
 
 
                             </div>
@@ -73,7 +79,7 @@
             </div>
         </div>
         {{-- <div class="text-left">
-            <small class="text-sidenavcolor">Copyright &copy; <?php echo date("Y"); ?> Engine Dome</small>
+            <small class="text-sidenavcolor">Copyright &copy; <?php echo date('Y'); ?> Engine Dome</small>
         </div> --}}
     </section>
     <!-- Section: Design Block -->

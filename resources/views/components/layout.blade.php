@@ -20,9 +20,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     {{-- JQUERY CDN --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    
-    
+
+
+
 
     <!-- Latest compiled and minified CSS -->
     {{-- <link rel="stylesheet"
@@ -36,7 +36,8 @@
 
 
     {{-- MULTI SELECT CDN --}}
-    <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css">
+    <link rel="stylesheet"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css">
     </link>
     <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     </link>
@@ -149,14 +150,13 @@
             color: inherit;
             font-weight: bolder;
         }
-        
+
     </style>
     <title>SJGH | Report Catalog</title>
 </head>
 
 <body class="mb-48 bg-white">
-    <nav
-        class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar ">
+    <nav class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar ">
         <a href="/">
             {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
             <h1 class="text-2xl font-bold uppercase text-laravel mytitle">
@@ -266,20 +266,19 @@
     </main>
     <x-flash-success />
 
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
     {{-- MDB JAVASCRIPT --}}
     <script rel="stylesheet" src="{{ asset('mdb5-free-standard/js/mdb.min.js') }}"></script>
 
-   <script>
-     $(function() {
+    <script>
+        $(function() {
             // $(".object-contain").hide();
             $(".object-contain").click(function() {
                 $(this).toggleClass('max-w-full h-auto', 'max-w-xs');
             });
         });
-   </script>
+    </script>
 </body>
 
 </html>

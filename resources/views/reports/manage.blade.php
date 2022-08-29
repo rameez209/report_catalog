@@ -12,7 +12,7 @@
                     @foreach ($reports as $report)
                         <tr class="border-gray-300">
                             <td class="px-4 py-8 border-t border-b border-gray-300 text-lg">
-                                <a href="show.html">
+                                <a href="/reports/{{ $report->id }}">
                                     {{ $report->report_name }}
                                 </a>
                             </td>

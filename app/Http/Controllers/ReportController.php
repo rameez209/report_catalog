@@ -15,7 +15,7 @@ class ReportController extends Controller
     public function index()
     {
         return view('reports.index', [
-            'reports' => report::latest()->filter(request(['department', 'search']))->paginate(15) // PAGINATE FUNCTION WILL SHOW 12 REPORTS PER PAGE
+            'reports' => report::latest()->filter(request(['department', 'search']))->paginate(16) // PAGINATE FUNCTION WILL SHOW 12 REPORTS PER PAGE
             //  'departments' => DB::table('departments')->select('departments')->orderBy('departments', 'asc')->distinct()->get(),
         ]);
     }
@@ -126,7 +126,7 @@ class ReportController extends Controller
         return redirect('/')->with('success', 'Report Deleted Successfully!');
     }
 
-    // Manage report
+    // Manage Reports
     public function manage()
     {
         return view('reports.manage', ['reports' => auth()->user()->reports()->get()]);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForgotPassword;
 use App\Models\Report;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -66,4 +67,8 @@ Route::get('/login', [UserController::class, 'login'])->name('login')->middlewar
 
 // Log In User
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// Password Reset
+// Route::get('/forgot_password', [ForgotPassword::class, 'forgot'])->name('forgot')->middleware('guest');
+// Route::post('/forgot_password', [ForgotPassword::class, 'password'])->name('password')->middleware('guest');
 

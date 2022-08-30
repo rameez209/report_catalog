@@ -4,8 +4,8 @@
         style="background-image: url('images/report-icon.jpg')"></div>
 
     <div class="z-10 p-10">
-        <p class="text-xl text-white font-bold my-4">
-            This page provides a comprehensive guide to reporting. <br>The SJGH Report Catalog outlines the best practices
+        <p class="text-xl text-white font-bold my-4 font-poppins title-shadow">
+            This page provides a comprehensive guide to reporting. The SJGH Report Catalog outlines the best practices
             and recommendations.
         </p>
 

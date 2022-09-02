@@ -99,7 +99,6 @@
             text-decoration: none;
             font-size: 18px;
             color: #cfcfcf;
-            ;
             display: block;
         }
 
@@ -138,7 +137,6 @@
 
         a:hover {
             color: inherit;
-            font-weight: bolder;
         }
     </style>
     <title>SJGH | Report Catalog</title>
@@ -193,7 +191,7 @@
                 <li>
                     <a href="/login" class="hover:text-laravel title-shadow">
                         <i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login
+                        Login 
                     </a>
                 </li>
             @endauth

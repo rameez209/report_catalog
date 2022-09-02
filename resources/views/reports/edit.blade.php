@@ -1,6 +1,6 @@
 <x-layout>
     <!-- Section: Design Block -->
-    <section class="text-left"
+    <section class="text-left "
         style="
             /* background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg'); */
             
@@ -14,28 +14,35 @@
         </div>
         <!-- Background image -->
 
-        <div class="card mx-4 mx-md-5 shadow-5-strong bg-white"
+        <div class="card mx-4 mx-md-5 shadow-5-strong bg-white col lg:w-3/5 md:w-50 sm:w-fit pt-4 pb-4"
             style="
-          margin-top: -100px;
+          margin-top: -250px;
           backdrop-filter: blur(30px);
           ">
-            <div class="card-body py-5 px-md-5">
+            <div class="card-body px-md-5">
 
-                {{-- <x-card class="rounded mx-auto mt-24"> --}}
+                <x-card class="bg-white rounded mx-auto border-0 outline outline-2 outline-offset-2">
                 <header class="text-center ">
-                    <h2 class="text-2xl mb-4 font-bold uppercase mb-1">
-                        Post a Report
+                    <h2 class="text-2xl mb-2 font-bold uppercase mb-1">
+                        Edit Report
                     </h2>
-                    {{-- <p class="mb-4">Add Report</p> --}}
+                    <div class="relative ">
+                        <div class="absolute inset-0 flex items-center">
+                          <div class="w-full border-b border-gray-300"></div>
+                        </div>
+                        <div class="relative flex justify-center">
+                          <span class="bg-white px-4 text-sm text-gray-500">{{ $report->report_name }}</span>
+                        </div>
+                      </div>
                 </header>
 
                 <form method="POST" action="/reports/{{ $report->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <div class="flex row gap-4 divide-x ">
-                        <div class="w-1/2 col md:w-full sm-w-full p-4">
+                    <div>
+                        <div>
                             {{-- REPORT NAME --}}
-                            <div class="mb-6">
+                            <div class="mb-6 mt-4">
                                 <label for="report_name" class="inline-block text-lg mb-2">Report Name <span class="text-red-500">*</span></label>
                                 <input type="text" class="border border-gray-200 rounded p-2 w-full"
                                     placeholder="Report Name" name="report_name" value="{{ $report->report_name }}" />
@@ -129,7 +136,7 @@
                             </div>
 
                             {{-- REPORT DESCRIPTION --}}
-                            <div class="mb-6">
+                            <div class="mb-3">
                                 <label for="description" class="inline-block text-lg mb-2">
                                     Description <span class="text-red-500">*</span>
                                 </label>
@@ -142,13 +149,27 @@
                             
 
                         </div>
-                        <div class="w-1/2 col md:w-full p-4">
-                            {{-- ----------------------- --}}
-                            {{-- OPTIONAL FIELDS --}}
-                            {{-- HOW TO RUN THE REPORT --}}
-                            {{-- ----------------------- --}}
 
-                            <div class="mb-6">
+
+                            {{-- HORIZONTAL LINE --}}
+                            <div class="relative py-4">
+                                <div class="absolute inset-0 flex items-center">
+                                  <div class="w-full border-b border-gray-300"></div>
+                                </div>
+                                <div class="relative flex justify-center">
+                                  <span class="bg-white px-4 text-sm text-gray-500">Optional</span>
+                                </div>
+                              </div>
+
+
+                              {{-- ----------------------- --}}
+                              {{-- OPTIONAL FIELDS --}}
+                              {{-- HOW TO RUN THE REPORT --}}
+                              {{-- ----------------------- --}}
+
+                            {{-- <div class="w-1/2 col md:w-full p-4"> --}}
+                            <div class="mt-3">
+
                                 <label for="run_report_description" class="inline-block text-lg mb-2">
                                     How to run the report description <span class="text-[#808080]">(Optional)</span>
                                 </label>
@@ -221,29 +242,27 @@
                                 @enderror
                             </div>
                         </div>
-                    </div>
-
-                    {{-- FOR THE BORDER --}}
-                    {{-- <div class="border border-gray-200 w-full mb-6"></div> --}}
-
-                    {{-- SUBMIT AND CANCEL BUTTON --}}
-                    <div class="flex mb-4 gap-x-4 justify-center">
-                        <a type="submit" class=" pr-4">
-                            <button class="btn btn-laravel text-white bg-laravel">
-                                Update Report
-                            </button></a>
-                        <a href="/" class="btn btn-danger bg-danger text-white "><i
-                                class="fa-solid fa-arrow-left"></i>
-                            Back
-                        </a>
+                        {{-- SUBMIT AND CANCEL BUTTON --}}
+                        <div class="flex mb-4 gap-x-4 justify-center">
+                            <a type="submit" class=" pr-4">
+                                <button class="btn btn-laravel text-white bg-laravel">
+                                    Update Report
+                                </button></a>
+                            <a href="/" class="btn btn-danger bg-danger text-white "><i
+                                    class="fa-solid fa-arrow-left"></i>
+                                Cancel
+                            </a>
+                        </div>
                     </div>
 
                 </form>
-                {{-- </x-card> --}}
-            </div>
+            </x-card>
         </div>
-    </section>
+    </div>
+</section>
     <!-- Section: Design Block -->
+
+
     {{-- <x-card class="rounded max-w-lg mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">

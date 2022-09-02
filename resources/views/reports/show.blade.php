@@ -13,11 +13,9 @@
                             <x-report-department :departmentCsv="$report->Department" />
                         </div>
                         <div class="inline-flex items-baseline pt-1 pr-4 text-white uppercase ">
-
                             <a href="/reports/{{ $report->id }}/edit">
                                 <i class="fa-solid fa-pencil"></i> Edit
                             </a>
-
                             <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
                                 @csrf
                                 @method('DELETE')
@@ -59,7 +57,7 @@
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <div>
                                 <div class="fw-bold">Frequency</div>
-                                <div class="text-muted">{{ $report->frequency }}</div>
+                                <div class="text-muted text-capitalize">{{ $report->frequency }}</div>
                             </div>
                             {{-- <span class="badge rounded-pill badge-primary">Onboarding</span> --}}
                         </li>
@@ -76,9 +74,8 @@
                     {{-- EDIT AND DELETE BUTTONS --}}
                     {{-- ----------------------- --}}
                 </div>
-                {{-- <hr> --}}
-                <div class="flex justify-between border-t-2 pl-6">
-                    <div class="">
+                <div class="flex justify-between border-t-2 pl-6 ">
+                    <div class="font-normal mt-2">
                         <x-report-Keyterm :KeytermsCsv="$report->key_terms" />
                     </div>
                     <div class="inline-flex items-baseline pt-1 pr-4 mt-2 mb-2  uppercase ">
@@ -106,18 +103,6 @@
     {{-- ----------------------- --}}
     {{-- EDIT AND DELETE BUTTONS --}}
     {{-- ----------------------- --}}
-
-    {{-- <div class="inline-flex items-baseline mr-4 mt-4 uppercase justify-end">
-            <a href="/reports/{{ $report->id }}/edit">
-                <i class="fa-solid fa-pencil"></i> Edit
-            </a>
-
-            <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
-                @csrf
-                @method('DELETE')
-                <button class="text-red-500 uppercase"><i class="fa-solid fa-trash"></i> Delete</button>
-            </form>
-        </div> --}}
 
     <x-card class="m-4 p-2 flex space-x-6 justify-between">
 
@@ -182,15 +167,3 @@
     </x-card>
     </div>
 </x-layout>
-
-@push('scripts')
-    <script>
-        // $(function() {
-        //     $(".object-contain cursor-pointer").hide();
-        //     $(".big-sample").click(function() {
-        //         $(".img-container").removeClass('w-15');
-        //         $(".img-container").addClass('w-100');
-        //     });
-        // });
-    </script>
-@endpush

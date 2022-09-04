@@ -13,13 +13,25 @@
             <div class="text-xs mb-3 text-laravel">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
             </div>
-            <p class="card-text text-xs">{{ $report->description }}</p>
+            @php
+                $string = strip_tags($report->description);
+                if(strlen($string) > 200)
+                    :
+                    $stringCut = substr($string, 0, 200);
+                    $endPoint = strrpos($stringCut, ' ');
+                    $string = $endPoint?substr($stringCut, 0, $endPoint):substr($stringCut, 0);
+                    $string.='... '.'<a href="/reports/{{ $report->id }}/show">Read more</a>';
+                endif
+            @endphp
+
+            <p class="card-text text-xs">{{ $string }}</p>
             <hr class="mt-2">
             <div class="text-sm mt-2 flex justify-between ">
                 <x-report-keyterm :keytermsCsv="$report->key_terms" />
-                    <a class="badge rounded-pill bg-light text-dark hover:bg-navbarcolor hover:text-light" href="/reports/{{ $report->id }}/edit">
-                        <i class="fa-solid fa-pencil"></i> Edit
-                    </a>
+                <a class="badge pt-1 rounded-pill bg-navbarcolor text-light hover:text-red hover:bg-sidenavcolor "
+                    href="/reports/{{ $report->id }}/edit">
+                    <i class="fa-solid fa-pencil"></i> &nbsp; Edit
+                </a>
             </div>
         </div>
     </div>

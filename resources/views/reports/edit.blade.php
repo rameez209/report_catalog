@@ -186,7 +186,7 @@
                                     Screen Shot: How to run the report <span class="text-[#808080]">(Optional)</span>
                                 </label>
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full" name="screenshot" />
-                                <img class="w-48 mr-6 mb-6"
+                                <img class="w-48 mr-6 mb-6 mt-4"
                                     src="{{ $report->screenshot ? asset('storage/' . $report->screenshot) : asset('/images/no-image.png') }}"
                                     alt="" />
                                 @error('screenshot')
@@ -217,7 +217,7 @@
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                                     name="data_extract_location_screenshot" />
                 
-                                <img class="w-48 mr-6 mb-6"
+                                <img class="w-48 mr-6 mb-6 mt-4"
                                     src="{{ $report->data_extract_location_screenshot ? asset('storage/' . $report->data_extract_location_screenshot) : asset('/images/no-image.png') }}"
                                     alt="" />
                 
@@ -234,7 +234,7 @@
                                 <input type="file" class="border border-gray-200 rounded p-2 w-full"
                                     name="report_example_screenshot" />
                 
-                                <img class="w-48 mr-6 mb-6"
+                                <img class="w-48 mr-6 mb-6 mt-4"
                                     src="{{ $report->report_example_screenshot ? asset('storage/' . $report->report_example_screenshot) : asset('/images/no-image.png') }}"
                                     alt="Report Example" />
                                 @error('report_example_screenshot')

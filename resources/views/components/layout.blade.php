@@ -138,6 +138,9 @@
         a:hover {
             color: inherit;
         }
+        .hide-div {
+            display: none;
+        }
     </style>
     <title>SJGH | Report Catalog</title>
 </head>
@@ -265,7 +268,7 @@
                 $(this).toggleClass('max-w-full h-auto', 'max-w-xs');
             });
 
-            $(".report-list").hide();
+            // $(".report-list").hide();
             $(".show-details").click(function(){
                 $(".report-list-details").toggle();
                 $(".report-list").toggle();

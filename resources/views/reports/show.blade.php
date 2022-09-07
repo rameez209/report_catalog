@@ -16,7 +16,7 @@
                             <a href="/reports/{{ $report->id }}/edit">
                                 <i class="fa-solid fa-pencil"></i> Edit
                             </a>
-                            <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
+                            <form class="ml-6 delete-btn-form" method="POST" action="/reports/{{ $report->id }}">
                                 @csrf
                                 @method('DELETE')
                                 <button class="text-red-500 uppercase"><i class="fa-solid fa-trash"></i> Delete</button>
@@ -84,7 +84,7 @@
                             <i class="fa-solid fa-pencil"></i> Edit
                         </a>
 
-                        <form class="ml-6" method="POST" action="/reports/{{ $report->id }}">
+                        <form class="ml-6 delete-btn-form" method="POST" action="/reports/{{ $report->id }}">
                             @csrf
                             @method('DELETE')
                             <button class="text-red-500 uppercase"><i class="fa-solid fa-trash"></i> Delete</button>

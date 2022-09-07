@@ -13,18 +13,20 @@
             <div class="text-xs mb-3 text-laravel">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
             </div>
+
+            {{-- DISPLAY READ MORE --}}
             @php
                 $string = strip_tags($report->description);
-                if(strlen($string) > 200)
+                if(strlen($string) > 310)
                     :
-                    $stringCut = substr($string, 0, 200);
+                    $stringCut = substr($string, 0, 310);
                     $endPoint = strrpos($stringCut, ' ');
                     $string = $endPoint?substr($stringCut, 0, $endPoint):substr($stringCut, 0);
-                    $string.='... '.'<a href="/reports/{{ $report->id }}/show">Read more</a>';
+                    $string.=' <b>...</b>';
                 endif
             @endphp
 
-            <p class="card-text text-xs">{{ $string }}</p>
+            <p class="card-text text-xs">{!! $string !!}</p>
             <hr class="mt-2">
             <div class="text-sm mt-2 flex justify-between ">
                 <x-report-keyterm :keytermsCsv="$report->key_terms" />

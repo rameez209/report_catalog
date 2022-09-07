@@ -272,7 +272,11 @@
             $(".show-details").click(function(){
                 $(".report-list-details").toggle();
                 $(".report-list").toggle();
-            })
+            });
+
+            $(".delete-btn-form").on("submit", function() {
+                return confirm("Are you sure you want to delete this report?");
+            });
         });
     </script>
 </body>

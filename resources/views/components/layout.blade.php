@@ -14,49 +14,18 @@
 
     {{-- MATERIAL DESIGN BOOTSTRAP 5 --}}
     <link rel="stylesheet" href="{{ asset('mdb5-free-standard/css/mdb.min.css') }}">
+
     {{-- ALPINJS --}}
     <script src="//unpkg.com/alpinejs" defer></script>
+
     {{-- TAILWIND CSS --}}
-    <script src="https://cdn.tailwindcss.com"></script>
+    @vite('resources/css/app.css')
+
     {{-- JQUERY CDN --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    {{-- MULTI SELECT CDN --}}
-    {{-- <link rel="stylesheet"
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css">
-    </link>
-    <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    </link>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
-
-
-
-
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css"></script> --}}
-
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        laravel: "#1E98A6",
-                        success: "#198754",
-                        // department: "#008080",
-                        department: "#33b5e5",
-                        info: "#17a2b8",
-                        navbarcolor: "#363c3d",
-                        sidenavcolor: "#484c4d",
-                        greytext: "#333333",
-                    },
-                    fontFamily: {
-                        poppins: ["Poppins", "sans-serif"],
-                        adelia: ["ADELIA", "cursive"],
-                    },
-                },
-            },
-        };
-    </script>
+    
+   
     <style>
         ::-webkit-scrollbar {
             display: none;
@@ -110,8 +79,6 @@
             margin-left: 280px;
             /* Same as the width of the sidenav */
             font-size: 18px;
-            /* Increased text to enable scrolling */
-            /* padding: 0px 10px; */
 
         }
 

@@ -10,7 +10,6 @@
             <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">List</span>
           </label>
     </div>
-
     <div class="lg:grid lg:grid-cols-2 sm:grid-col-1 sm:grid-col-1 gap-4 space-y-4 md:space-y-0 mx-4 report-list-details">
         @unless(count($reports) == 0)
             @foreach ($reports as $report)

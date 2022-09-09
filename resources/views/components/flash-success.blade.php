@@ -1,12 +1,6 @@
 @if (session()->has('success'))
-    {{-- <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 2000)" x-show="show"
-        class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-success text-white px-48 py-4 mt-20">
-        <p>
-            {{ session('success') }}
-        </p>
-    </div> --}}
     <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 2000)" x-show="show" role="alert"
-        class="fixed top-0 left-1/2 transform -translate-x-1/2 text-white px-48 py-4 mt-20">
+        class="fixed top-0 left-1/2 transform -translate-x-1/2 text-white px-48 py-4 mt-5">
         <div id="toast-default"
             class="flex items-center p-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
             role="alert">
@@ -34,6 +28,5 @@
                 </svg>
             </button>
         </div>
-
     </div>
 @endif

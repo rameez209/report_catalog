@@ -1,5 +1,6 @@
 <x-layout>
-    <a href="/" class="inline-block btn btn-laravel bg-laravel text-white ml-4 mb-4 mt-10"><i class="fa-solid fa-arrow-left"></i>
+    <a href="/" class="inline-block btn btn-laravel bg-laravel text-white ml-4 mb-4 mt-10"><i
+            class="fa-solid fa-arrow-left"></i>
         Back
     </a>
     <div class="mx-4">
@@ -29,7 +30,7 @@
                     <p class="card-text">
                         {{-- <small class="text-muted text-department text-sm"> --}}
                         <small class="text-laravel text-sm">
-                            <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by  {{ $report->updated_by }}
+                            <i class="fa fa-pencil-square" aria-hidden="true"></i> Updated by {{ $report->updated_by }}
                         </small>
                     </p>
 
@@ -92,11 +93,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-            
     </div>
     </x-card>
 
@@ -111,8 +107,8 @@
         {{-- --------------------- --}}
 
         {{-- ALPINE-JS TO TOGGLE THE REPORT SCREENSHOT --}}
-        <div class="ml-4" x-data="{ open: false }">
-            <button x-on:click="open =! open" class="btn text-white bg-laravel hover:bg-sidenavcolor btn-rounded"
+        <div class="ml-4 py-4" x-data="{ open: false }">
+            <button x-on:click="open =! open" class="btn text-white bg-laravel hover:bg-sidenavcolor btn-rounded "
                 type="button">How to run the report <i class="fa-solid fa-arrow-down"></i></button>
 
             <div x-show="open" class="mt-4">

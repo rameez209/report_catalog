@@ -15,7 +15,8 @@
         </div>
         <!-- Background image -->
 
-        <div class="card mx-4 mx-md-5 shadow-5-strong"
+        {{-- <div class="card mx-4 mx-md-5 shadow-5-strong" --}}
+        <div class="card sm:mx-5 lg:mx-32 xl:mx-72 2xl:mx-96 shadow-5-strong flex"
             style="
           margin-top: -100px;
           background: hsla(0, 0%, 100%, 0.8);
@@ -30,11 +31,6 @@
                         <form method="POST" action="/users">
                             @csrf
 
-                            {{-- <div class="form-outline">
-                                <input type="text" id="form3Example2" class="form-control" />
-                                <label class="form-label" for="form3Example2">Last name</label>
-                            </div> --}}
-
                             <!-- Name input -->
                             <div class="form-outline mb-4">
                                 <input type="text" class="form-control" name="name" value="{{ old('name') }}" />
@@ -42,7 +38,6 @@
                                     <p class="text-red-500 text-xs ">{{ $message }}</p>
                                 @enderror
                                 <label class="form-label" for="form3Example1">Name</label>
-
                             </div>
 
                             <!-- Email input -->

@@ -23,9 +23,8 @@
 
     {{-- JQUERY CDN --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     
-   
+   {{-- CSS --}}
     <style>
         ::-webkit-scrollbar {
             display: none;
@@ -108,6 +107,7 @@
         .hide-div {
             display: none;
         }
+        
     </style>
     <title>SJGH | Report Catalog</title>
 </head>
@@ -116,13 +116,11 @@
     <nav class="sticky top-0 z-50 flex justify-between items-center pl-4 pt-2 pb-2 bg-navbarcolor main top-bar ">
         <a href="/">
             {{-- <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" /> --}}
-            <h1 class="text-2xl font-bold uppercase text-laravel mytitle">
-                {{-- Report<span class="text-black">Catalog</span> --}}
+            <h1 class="text-2xl font-bold uppercase text-laravel">
                 <span class="title-shadow">SJGH Report Catalog</span>
             </h1>
         </a>
         <ul class="flex space-x-6 mr-6 text-lg text-white ">
-
             @auth
                 {{-- SHOW IF THE USER IS LOGGED IN --}}
                 <li>
@@ -169,14 +167,6 @@
 
     </nav>
     <div class="sidenav pb-10 border-r-2 border-navbarcolor">
-
-        {{-- <a href="/">
-            <img class="w-44" src="{{ asset('images/logo.png') }}" alt="" class="logo" />
-            <h1 class="text-3xl font-bold uppercase text-laravel drop-shadow-lg shadow-black">
-                Report<span class="text-black">Catalog</span>
-                <span>SJGH Report Catalog</span>
-            </h1>
-        </a> --}}
         <li class="list-none mb-1 fs-4 text-[#808080] font-semibold uppercase ml-2 mt-4">Dashboard</li>
         <div class="flex flex-col align-left">
             <a class="uppercase leading-2 " target="_blank" href="/">
@@ -244,6 +234,8 @@
             $(".delete-btn-form").on("submit", function() {
                 return confirm("Are you sure you want to delete this report?");
             });
+
+           
         });
     </script>
 </body>

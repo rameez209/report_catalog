@@ -17,6 +17,7 @@
             {{-- DISPLAY READ MORE --}}
             @php
                 $string = strip_tags($report->description);
+
                 if(strlen($string) > 310)
                     :
                     $stringCut = substr($string, 0, 310);

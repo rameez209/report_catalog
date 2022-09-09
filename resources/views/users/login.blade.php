@@ -1,7 +1,7 @@
-<x-layout class="text-center ">
+<x-layout class="text-center flex">
 
     <!-- Section: Design Block -->
-    <section class="text-center"
+    <section class="text-center justify-center"
         style="
             /* background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg'); */
             background: #FFFFFF;
@@ -14,13 +14,13 @@
         <div class="p-5 bg-image" style=" height: 300px; ">
         </div>
 
-        <div class="card mx-4 mx-md-5 shadow-5-strong"
+        <div class="card sm:mx-5 lg:mx-32 xl:mx-72 2xl:mx-96 shadow-5-strong flex"
             style="
           margin-top: -100px;
           background: hsla(0, 0%, 100%, 0.8);
           backdrop-filter: blur(30px);
           ">
-            <div class="card-body py-5 px-md-5 ">
+            <div class="card-body py-5 px-md-8 ">
 
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
@@ -83,53 +83,4 @@
         </div> --}}
     </section>
     <!-- Section: Design Block -->
-
-
-    {{-- <x-card class="p-10 max-w-lg mx-auto mt-24">
-        <header class="text-center ">
-            <h2 class="text-2xl font-bold uppercase mb-1">
-                Login
-            </h2>
-            <p class="mb-4">Login to your account to add report</p>
-        </header>
-
-        <form method="POST" action="/users/authenticate">
-            @csrf
-            <div class="mb-6">
-                <label for="email" class="inline-block text-lg mb-2">Email</label>
-                <input type="email" class="border border-gray-200 rounded p-2 w-full" name="email"
-                    value="{{ old('email') }}" />
-
-                @error('email')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div class="mb-6">
-                <label for="password" class="inline-block text-lg mb-2">
-                    Password
-                </label>
-                <input type="password" class="border border-gray-200 rounded p-2 w-full" name="password" />
-
-                @error('password')
-                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
-
-            </div>
-
-            <div class="mb-6">
-                <button type="submit"
-                    class="btn btn-block bg-laravel text-white rounded py-2 px-4 hover:bg-sidenavcolor">
-                    Sign In
-                </button>
-            </div>
-
-            <div class="mt-8">
-                <p>
-                    Don't have an account?
-                    <a href="/register" class="text-laravel">Register</a>
-                </p>
-            </div>
-        </form>
-    </x-card> --}}
 </x-layout>

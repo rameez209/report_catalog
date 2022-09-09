@@ -10,19 +10,20 @@
             background: linear-gradient(to top, #FFFFFF, #363C3D);
     ">
         <!-- Background image -->
-        <div class="p-5 bg-image" style=" height: 300px; ">
+        <div class="p-5 bg-image" style=" height: 300px;">
         </div>
         <!-- Background image -->
 
-        <div class="card mx-4 mx-md-5 shadow-5-strong bg-white col lg:w-3/5 md:w-50 sm:w-fit pt-4 pb-4"
+        {{-- <div class="card mx-4 mx-md-5 shadow-5-strong bg-white col lg:w-3/5 md:w-50 sm:w-fit pt-4 pb-4" --}}
+        <div class="card sm:mx-5 lg:mx-32 xl:mx-72 2xl:mx-96 shadow-5-strong"
             style="
           margin-top: -250px;
           backdrop-filter: blur(30px);
           ">
-            <div class="card-body px-md-5">
+            <div class="card-body px-md-5 py-md-5">
 
-                <x-card class="bg-white rounded mx-auto border-0 outline outline-2 outline-offset-2">
-                <header class="text-center ">
+                <x-card class="bg-white rounded mx-auto outline outline-1 outline-offset-2">
+                <header class="text-center pb-2">
                     <h2 class="text-2xl mb-2 font-bold uppercase mb-1">
                         Edit Report
                     </h2>
